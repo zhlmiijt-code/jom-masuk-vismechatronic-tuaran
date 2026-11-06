@@ -1,0 +1,4128 @@
+<!DOCTYPE html>
+<html lang="ms">
+<!--
+LANDING PAGE KOLEJ VIS — VERSI SATU FAIL UNTUK BELAJAR
+===================================================
+CARA GUNA
+1. Simpan fail ini sebagai index.html.
+2. Klik dua kali fail untuk membukanya dalam pelayar.
+3. Buka dalam VS Code atau Notepad untuk mengubah kod.
+4. Simpan perubahan, kemudian refresh pelayar.
+
+PETA KOD
+BAHAGIAN A — <head>  : tajuk tab dan penerangan laman.
+BAHAGIAN B — <style> : warna, saiz, jarak dan susun atur.
+BAHAGIAN C — <body>  : teks, gambar, pautan dan borang.
+BAHAGIAN D — <script>: menu, pilihan minat, kerjaya dan WhatsApp.
+
+TIP MUDAH
+- Cari perkataan 'UBAH DI SINI' untuk tempat suntingan utama.
+- class="hero" dipadankan dengan .hero dalam CSS.
+- id="mohon" dipadankan dengan pautan href="#mohon".
+- Jangan tukar nama id atau class tanpa mengubah CSS/JavaScript berkaitan.
+- HTML, CSS dan JavaScript semuanya berada dalam fail ini.
+- Foto dimuatkan melalui pautan internet; tiada folder gambar diperlukan.
+- Foto ialah ilustrasi, bukan gambar sebenar fasiliti atau graduan kolej.
+- Klik WhatsApp hanya menyediakan draf. Pelawat masih perlu menekan Hantar.
+-->
+
+<head>
+    <!-- BAHAGIAN A — MAKLUMAT LAMAN. UBAH DI SINI: title dan description. -->
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        Belajar Mekatronik di Tuaran | Kolej VIS — November 2026
+    </title>
+    <meta
+        content="Bina kemahiran teknikal bersama Kolej VIS Mechatronic, Tuaran. SKM Tahap 3, 18 bulan dan 70% amali. Semak kelayakan pengambilan November 2026 dengan Sir Zul."
+        name="description" />
+    <meta content="#142b35" name="theme-color" />
+    <meta content="Minat teknikal? Bina masa depan dengan mekatronik." property="og:title" />
+    <meta content="Pengambilan November 2026 • Kolej VIS, Tuaran Sabah • SKM Tahap 3 • 70% Amali • 18 bulan"
+        property="og:description" />
+    <style>
+        /*
+        BAHAGIAN B — CSS (RUPA LAMAN)
+        ==============================
+        Contoh membaca CSS:
+        .hero { padding: 58px 0; }
+        Maksudnya: elemen class="hero" mendapat ruang atas/bawah 58px.
+
+        Nilai warna ditetapkan di :root. var(--ink) menggunakan warna --ink.
+        @media di hujung CSS menyesuaikan laman untuk tablet dan telefon.
+        */
+        /* SUSUNAN KOTAK: 4 LAJUR DI KOMPUTER */
+        .kelebihan-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 20px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        /* RUPA SETIAP KAD */
+        .kelebihan-kad {
+            min-width: 0;
+            background: #ffffff;
+            border: 1px solid #dce2dd;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* SAIZ GAMBAR SERAGAM */
+        .kelebihan-gambar {
+            display: block;
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background: #eaf0e9;
+        }
+
+        /* LOGO / SIJIL: PAPARKAN KESELURUHAN GAMBAR */
+        .kelebihan-gambar.gambar-logo {
+            object-fit: contain;
+            padding: 15px;
+            background: #ffffff;
+        }
+
+        /* RUANG TEKS DI BAWAH GAMBAR */
+        .kelebihan-teks {
+            padding: 18px;
+        }
+
+        .kelebihan-teks strong {
+            display: block;
+            color: #142b35;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .kelebihan-teks p {
+            margin: 7px 0 0;
+            color: #596b71;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        /* TABLET DAN TELEFON: 2 LAJUR */
+        @media (max-width: 800px) {
+            .kelebihan-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 14px;
+            }
+        }
+
+        /* KEMASAN UNTUK TELEFON */
+        @media (max-width: 480px) {
+            .kelebihan-gambar {
+                height: 120px;
+            }
+
+            .kelebihan-teks {
+                padding: 13px;
+            }
+
+            .kelebihan-teks strong {
+                font-size: 12px;
+            }
+
+            .kelebihan-teks p {
+                font-size: 11px;
+            }
+        }
+
+        /* B1. WARNA UTAMA — UBAH DI SINI. Contoh: --orange ialah warna butang utama. */
+        :root {
+            --ink: #142b35;
+            --muted: #596b71;
+            --orange: #ed7035;
+            --pale: #f8f6f1;
+            --line: #dce2dd;
+            --green: #eaf0e9;
+            --white: #fff;
+            --radius: 12px
+        }
+
+        /* B2. TETAPAN ASAS — box-sizing memastikan padding termasuk dalam saiz elemen. */
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px
+        }
+
+        body {
+            margin: 0;
+            background: var(--pale);
+            color: var(--ink);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            line-height: 1.65
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        button,
+        input,
+        select {
+            font: inherit
+        }
+
+        button,
+        a {
+            touch-action: manipulation
+        }
+
+        button {
+            cursor: pointer
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        summary:focus-visible,
+        input:focus-visible,
+        select:focus-visible {
+            outline: 3px solid #b34b16;
+            outline-offset: 4px
+        }
+
+        button:disabled {
+            cursor: wait
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin: 0
+        }
+
+        h1,
+        h2,
+        h3 {
+            line-height: 1.09;
+            letter-spacing: -1.7px
+        }
+
+        h1 {
+            font-size: clamp(42px, 4.35vw, 64px);
+            font-weight: 800;
+            letter-spacing: -2.9px
+        }
+
+        h2 {
+            font-size: clamp(33px, 3.3vw, 46px);
+            font-weight: 750
+        }
+
+        h3 {
+            font-size: 24px;
+            letter-spacing: -.7px
+        }
+
+        em {
+            font-style: normal;
+            color: #b54f23
+        }
+
+        p {
+            color: var(--muted)
+        }
+
+        /* B3. LEBAR KANDUNGAN DAN JARAK BAHAGIAN. */
+        .container {
+            width: min(1200px, calc(100% - 80px));
+            margin-inline: auto
+        }
+
+        .section {
+            padding: 88px 0
+        }
+
+        .eyebrow {
+            font-size: 10px;
+            letter-spacing: 1.9px;
+            font-weight: 800;
+            line-height: 1.5;
+            margin-bottom: 21px;
+            display: flex;
+            align-items: center;
+            gap: 9px
+        }
+
+        .rule {
+            width: 22px;
+            height: 2px;
+            background: var(--orange)
+        }
+
+        /* B4. BUTANG — gaya yang dikongsi oleh pautan dan butang. */
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            min-height: 52px;
+            padding: 14px 23px;
+            font-size: 13px;
+            line-height: 1.4;
+            font-weight: 750;
+            border: 1px solid transparent;
+            border-radius: 6px;
+            transition: background .18s, transform .18s
+        }
+
+        .button span {
+            font-size: 20px;
+            line-height: 1
+        }
+
+        .button:hover {
+            transform: translateY(-2px)
+        }
+
+        .primary {
+            color: #142b35;
+            background: var(--orange);
+            box-shadow: 0 4px 0 #9f3d1020
+        }
+
+        .primary:hover {
+            background: #fb8b51
+        }
+
+        .small {
+            min-height: 44px;
+            padding: 11px 18px;
+            font-size: 12px
+        }
+
+        .text-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 13px;
+            font-size: 13px;
+            font-weight: 750;
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 3px
+        }
+
+        .text-link:hover {
+            color: #b34b16
+        }
+
+        .micro {
+            font-size: 11px;
+            line-height: 1.7
+        }
+
+        .skip {
+            position: fixed;
+            top: -100px;
+            left: 20px;
+            z-index: 90;
+            background: white;
+            padding: 12px
+        }
+
+        .skip:focus {
+            top: 10px
+        }
+
+        /* B5. BANNER, LOGO DAN MENU NAVIGASI. */
+        .announcement {
+            background: var(--ink);
+            color: #fff
+        }
+
+        .announcement .container {
+            display: flex;
+            justify-content: space-between;
+            padding-block: 8px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1.2px
+        }
+
+        .announcement i,
+        .live i {
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--orange);
+            margin-right: 7px
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: #f8f6f1f5;
+            border-bottom: 1px solid #dce2dd99;
+            backdrop-filter: blur(14px)
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            min-height: 85px
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            line-height: 1.25;
+            flex-shrink: 0
+        }
+
+        .logo>b {
+            font-size: 43px;
+            font-weight: 900;
+            letter-spacing: -4px;
+            font-style: italic;
+            position: relative
+        }
+
+        .logo>b>span {
+            font-size: 10px;
+            color: var(--orange);
+            position: absolute;
+            right: -7px;
+            top: 3px
+        }
+
+        .logo>span {
+            border-left: 1px solid #bac4c4;
+            padding-left: 15px;
+            font-size: 8px;
+            letter-spacing: 1.6px
+        }
+
+        .logo>span strong {
+            font-size: 10px;
+            letter-spacing: 1.2px
+        }
+
+        .nav nav {
+            display: flex;
+            gap: 28px;
+            font-size: 12px
+        }
+
+        .nav nav a:hover {
+            color: #b34b16
+        }
+
+        .menu {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            background: none
+        }
+
+        .menu svg {
+            width: 24px;
+            fill: none;
+            stroke: var(--ink);
+            stroke-width: 1.7
+        }
+
+        /* B6. PAPARAN UTAMA — grid membahagikan teks dan gambar kepada dua lajur. */
+        .hero {
+            padding: 58px 0 64px;
+            overflow: hidden
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.08fr 1fr;
+            gap: 55px;
+            align-items: center
+        }
+
+        .hero-copy {
+            padding-block: 14px
+        }
+
+        .hero .eyebrow {
+            font-size: 9px;
+            letter-spacing: 1.5px
+        }
+
+        .hero h1 em {
+            color: #b85024
+        }
+
+        .lead {
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 440px;
+            margin-top: 22px
+        }
+
+        .lead strong {
+            font-weight: 600;
+            color: var(--ink)
+        }
+
+        .programme-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 11px;
+            margin-top: 25px
+        }
+
+        .programme-label span:first-child {
+            font-weight: 800;
+            border: 1px solid #aebcb8;
+            background: #eaf0e9;
+            padding: 5px 8px;
+            border-radius: 3px;
+            white-space: nowrap
+        }
+
+        .programme-label span:last-child {
+            max-width: 190px;
+            line-height: 1.5
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 27px;
+            align-items: center;
+            margin-top: 28px
+        }
+
+        .hero-micro {
+            margin-top: 19px
+        }
+
+        .hero-micro span {
+            margin-inline: 6px
+        }
+
+        .hero-visual {
+            position: relative;
+            min-height: 510px;
+            border-radius: 10px 10px 80px 10px;
+            background: var(--ink);
+            isolation: isolate
+        }
+
+        .hero-photo {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 58% center;
+            border-radius: inherit;
+            z-index: -2
+        }
+
+        .hero-visual:after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, #142b3550, transparent 40%, #061921d9);
+            border-radius: inherit;
+            z-index: -1
+        }
+
+        .image-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px;
+            color: white
+        }
+
+        .photo-mark {
+            font-size: 8px;
+            letter-spacing: 1.7px
+        }
+
+        .photo-symbol {
+            font-size: 30px;
+            line-height: 1;
+            font-weight: 300
+        }
+
+        .hero-photo-copy {
+            position: absolute;
+            left: 30px;
+            bottom: 154px;
+            color: #fff;
+            line-height: 1.45
+        }
+
+        .hero-photo-copy span {
+            display: block;
+            font-size: 14px
+        }
+
+        .hero-photo-copy strong {
+            font-size: 30px;
+            letter-spacing: -.8px
+        }
+
+        .practice-stamp {
+            position: absolute;
+            left: -25px;
+            bottom: 40px;
+            background: var(--orange);
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            padding: 17px 28px;
+            border-radius: 5px;
+            box-shadow: 0 8px 20px #0002
+        }
+
+        .practice-stamp>div {
+            border-right: 1px solid #84380e45;
+            padding-right: 23px
+        }
+
+        .practice-stamp strong {
+            font-size: 47px;
+            letter-spacing: -2px;
+            line-height: 1;
+            display: block
+        }
+
+        .practice-stamp strong span {
+            font-size: 26px
+        }
+
+        .practice-stamp>div>span {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 3px
+        }
+
+        .practice-stamp p {
+            font-size: 12px;
+            line-height: 1.5;
+            color: #492815
+        }
+
+        .photo-credit {
+            position: absolute;
+            bottom: 13px;
+            left: 30px;
+            font-size: 9px;
+            color: #d6dfdb
+        }
+
+        /* B7. RINGKASAN PROGRAM. */
+        .proof-strip {
+            border-block: 1px solid var(--line);
+            background: #efeee8
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding-block: 25px
+        }
+
+        .proof-grid>div {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 0 20px;
+            border-right: 1px solid #cbd2cc
+        }
+
+        .proof-grid>div:first-child {
+            padding-left: 0
+        }
+
+        .proof-grid>div:last-child {
+            border: 0;
+            padding-right: 0
+        }
+
+        .proof-icon {
+            font-size: 11px;
+            color: #9d592e;
+            font-weight: bold
+        }
+
+        .proof-grid p strong {
+            display: block;
+            font-size: 13px;
+            line-height: 1.5;
+            color: var(--ink)
+        }
+
+        .proof-grid p span {
+            display: block;
+            font-size: 10px;
+            margin-top: 4px
+        }
+
+        /* B8. TAJUK BAHAGIAN DAN PEMBELAJARAN. */
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 50px;
+            margin-bottom: 36px
+        }
+
+        .section-heading>p {
+            max-width: 350px;
+            font-size: 14px
+        }
+
+        .learning-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 52px;
+            align-items: stretch
+        }
+
+        .learning-feature {
+            position: relative;
+            min-height: 410px;
+            background: var(--ink);
+            border-radius: 10px;
+            overflow: hidden;
+            isolation: isolate
+        }
+
+        .learning-feature img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2
+        }
+
+        .learning-feature:after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 12%, #081f2ae8 90%);
+            z-index: -1
+        }
+
+        .learning-feature>div {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            right: 30px
+        }
+
+        .tag {
+            font-size: 8px;
+            letter-spacing: 1.4px;
+            color: #f7bd97;
+            font-weight: bold
+        }
+
+        .learning-feature h3 {
+            font-size: 37px;
+            color: white;
+            margin: 15px 0
+        }
+
+        .learning-feature p {
+            color: #d7e0dc;
+            max-width: 350px;
+            font-size: 13px
+        }
+
+        .learning-topics {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between
+        }
+
+        .learning-topics article {
+            display: flex;
+            gap: 21px;
+            padding: 21px 0;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .learning-topics article:first-child {
+            padding-top: 6px
+        }
+
+        .learning-topics article:last-child {
+            border-bottom: 0
+        }
+
+        .topic-number {
+            font-family: monospace;
+            color: #a95b31;
+            font-size: 12px;
+            padding-top: 4px
+        }
+
+        .learning-topics h3 {
+            font-size: 20px;
+            letter-spacing: -.4px;
+            margin-bottom: 9px
+        }
+
+        .learning-topics p {
+            font-size: 13px;
+            max-width: 340px
+        }
+
+        .asset-note {
+            margin-top: 18px;
+            max-width: 950px
+        }
+
+        /* B9. PILIHAN MINAT. */
+        .fit-panel {
+            display: grid;
+            grid-template-columns: .65fr 2fr;
+            gap: 30px;
+            background: #e9eee7;
+            border: 1px solid #dce3d8;
+            border-radius: 8px;
+            padding: 28px 32px;
+            margin-top: 37px
+        }
+
+        .fit-panel .eyebrow {
+            font-size: 9px;
+            margin-bottom: 10px
+        }
+
+        .fit-panel h3 {
+            font-size: 26px
+        }
+
+        .interest-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap
+        }
+
+        .interest-buttons button {
+            font-size: 11px;
+            font-weight: 600;
+            border: 1px solid #c9d2c7;
+            color: var(--ink);
+            background: #f8faf6;
+            border-radius: 50px;
+            padding: 9px 13px;
+            min-height: 38px
+        }
+
+        .interest-buttons button[aria-pressed=true] {
+            background: var(--ink);
+            color: white;
+            border-color: var(--ink)
+        }
+
+        .fit-main p {
+            font-size: 12px;
+            margin-top: 16px;
+            min-height: 40px
+        }
+
+        /* B10. TEKNOLOGI MASA DEPAN DAN SIMULASI. */
+        .future {
+            background: var(--ink);
+            color: white
+        }
+
+        .future-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center
+        }
+
+        .future .eyebrow {
+            color: #bbcbc9
+        }
+
+        .future h2 {
+            font-size: 40px
+        }
+
+        .future em {
+            color: #ffa16f
+        }
+
+        .future p {
+            color: #c1cecc;
+            font-size: 14px;
+            margin-top: 22px;
+            max-width: 440px
+        }
+
+        .future-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 26px
+        }
+
+        .future-tags span {
+            padding: 5px 10px;
+            font-size: 10px;
+            border: 1px solid #607276;
+            border-radius: 3px
+        }
+
+        .demo {
+            padding: 27px;
+            border: 1px solid #486067;
+            border-radius: 10px;
+            background: #1b3640
+        }
+
+        .demo-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 8px;
+            letter-spacing: 1.1px;
+            color: #c2d1d0
+        }
+
+        .live {
+            color: #c1e1c9;
+            white-space: nowrap
+        }
+
+        .live i {
+            background: #a4ccae
+        }
+
+        .demo-scene {
+            height: 136px;
+            position: relative;
+            margin-top: 15px;
+            overflow: hidden
+        }
+
+        .conveyor {
+            position: absolute;
+            bottom: 12px;
+            left: 0;
+            right: 0;
+            height: 23px;
+            border: 2px solid #a4b8b6;
+            border-radius: 15px;
+            background: repeating-linear-gradient(90deg, transparent, transparent 15px, #718d8e 15px, #718d8e 18px)
+        }
+
+        .parcel {
+            position: absolute;
+            bottom: 35px;
+            left: 7%;
+            width: 49px;
+            height: 48px;
+            background: var(--orange);
+            border: 1px solid #ffa576;
+            border-radius: 4px;
+            transition: left 1.6s ease
+        }
+
+        .parcel:before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            height: 17px;
+            width: 8px;
+            background: #f5bb97
+        }
+
+        .sensor {
+            position: absolute;
+            left: 60%;
+            top: 4px;
+            bottom: 35px;
+            border-left: 1px dashed #a5d2d0
+        }
+
+        .sensor span {
+            position: absolute;
+            font-size: 8px;
+            left: -19px;
+            top: -6px;
+            background: #1b3640;
+            padding-bottom: 5px;
+            color: #a5d2d0
+        }
+
+        .sensor i {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background: #a5d2d0;
+            left: -4px;
+            top: 16px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #a5d2d0
+        }
+
+        .demo.running .parcel {
+            left: 82%
+        }
+
+        .demo-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 18px 0 24px
+        }
+
+        .demo-steps>div {
+            display: flex;
+            gap: 9px;
+            align-items: start
+        }
+
+        .demo-steps b {
+            color: #ffa16f;
+            font-family: monospace;
+            font-size: 10px
+        }
+
+        .demo-steps span {
+            font-size: 10px;
+            color: #bdcecb;
+            line-height: 1.7
+        }
+
+        .demo-steps strong {
+            color: #edf2ee;
+            font-size: 11px;
+            font-weight: 500
+        }
+
+        .demo-button {
+            background: #ecf1e9;
+            color: var(--ink);
+            width: 100%;
+            font-size: 12px;
+            min-height: 45px
+        }
+
+        .demo-button:hover {
+            background: #fff
+        }
+
+        .demo p {
+            font-size: 10px;
+            min-height: 35px;
+            margin-top: 12px;
+            max-width: none
+        }
+
+        /* B11. PILIHAN DAN PENERANGAN KERJAYA. */
+        .career-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px
+        }
+
+        .career-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .career-options button {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-align: left;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            padding: 23px 22px;
+            background: #fff;
+            color: var(--ink);
+            font-size: 14px;
+            min-height: 75px;
+            transition: background .2s
+        }
+
+        .career-options button span {
+            font-family: monospace;
+            font-size: 10px;
+            color: #7b8d8b
+        }
+
+        .career-options button b {
+            margin-left: auto;
+            font-size: 20px;
+            font-weight: 400
+        }
+
+        .career-options button[aria-pressed=true] {
+            background: var(--ink);
+            color: #fff;
+            border-color: var(--ink)
+        }
+
+        .career-options button[aria-pressed=true] span {
+            color: #ffab7c
+        }
+
+        .career-detail {
+            padding: 35px 40px;
+            border-radius: 8px;
+            background: #e9eee7
+        }
+
+        .career-detail .eyebrow {
+            color: #6b786c;
+            font-size: 9px;
+            margin-bottom: 20px
+        }
+
+        .career-detail h3 {
+            font-size: 33px;
+            margin-bottom: 17px
+        }
+
+        .career-detail>p {
+            font-size: 13px
+        }
+
+        .detail-label {
+            display: block;
+            font-size: 8px;
+            letter-spacing: 1.8px;
+            font-weight: bold;
+            margin-top: 23px;
+            margin-bottom: 9px
+        }
+
+        .career-detail #career-skills {
+            font-size: 11px;
+            min-height: 38px
+        }
+
+        .career-detail .text-link {
+            margin-top: 16px;
+            font-size: 12px
+        }
+
+        /* B12. PEMBIAYAAN DAN RUANG IBU BAPA. */
+        .funding {
+            background: #eaf0e9
+        }
+
+        .funding-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px
+        }
+
+        .funding-grid article {
+            padding: 27px 30px;
+            background: #fff;
+            border: 1px solid #d9e3d5;
+            border-radius: 8px;
+            position: relative
+        }
+
+        .fund-icon {
+            position: absolute;
+            right: 25px;
+            top: 25px;
+            width: 28px;
+            height: 28px;
+            display: grid;
+            place-items: center;
+            background: #f7eee5;
+            color: #a55529;
+            border-radius: 50%;
+            font-size: 17px
+        }
+
+        .fund-amount {
+            font-size: 56px;
+            line-height: 1.2;
+            letter-spacing: -2px;
+            font-weight: 750;
+            margin: 14px 0 20px
+        }
+
+        .fund-amount small {
+            font-size: 20px;
+            letter-spacing: -.5px;
+            margin-right: 3px
+        }
+
+        .fund-amount>span {
+            font-size: 26px
+        }
+
+        .funding-grid h3 {
+            font-size: 18px;
+            letter-spacing: -.3px;
+            margin-bottom: 12px
+        }
+
+        .funding-grid p {
+            font-size: 12px
+        }
+
+        .funding-note {
+            font-size: 11px;
+            line-height: 1.9;
+            margin: 20px 0 35px;
+            max-width: 930px
+        }
+
+        .parent-note {
+            display: grid;
+            grid-template-columns: .8fr 1.4fr .8fr;
+            gap: 35px;
+            align-items: center;
+            padding: 30px 0;
+            border-block: 1px solid #c9d4c7
+        }
+
+        .parent-note .eyebrow {
+            font-size: 9px;
+            margin-bottom: 11px
+        }
+
+        .parent-title h3 {
+            font-size: 25px
+        }
+
+        .parent-note p {
+            font-size: 13px;
+            margin-bottom: 12px
+        }
+
+        .parent-note .text-link {
+            font-size: 12px
+        }
+
+        .parent-tags {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: start
+        }
+
+        .parent-tags span {
+            font-size: 10px;
+            padding: 6px 10px;
+            border: 1px solid #bdcdb9;
+            border-radius: 4px
+        }
+
+        .funding>.container>.micro {
+            margin-top: 15px
+        }
+
+        /* B13. KELAYAKAN DAN FAQ. */
+        .eligibility-grid {
+            display: grid;
+            grid-template-columns: .95fr 1.05fr;
+            gap: 95px;
+            align-items: center
+        }
+
+        .eligibility-grid>div>p {
+            font-size: 14px;
+            margin: 22px 0 25px
+        }
+
+        .eligibility-card {
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: white;
+            padding: 32px
+        }
+
+        .eligibility-card h3 {
+            font-size: 24px
+        }
+
+        .checklist {
+            list-style: none;
+            margin: 18px 0 0;
+            padding: 0
+        }
+
+        .checklist li {
+            display: flex;
+            gap: 14px;
+            padding: 17px 0;
+            border-bottom: 1px solid #e3e8e2
+        }
+
+        .checklist li:last-child {
+            border: 0
+        }
+
+        .check {
+            width: 23px;
+            height: 23px;
+            background: #eaf0e9;
+            border-radius: 50%;
+            color: #396341;
+            display: grid;
+            place-items: center;
+            font-size: 12px;
+            flex-shrink: 0
+        }
+
+        .checklist strong {
+            font-size: 13px;
+            display: block
+        }
+
+        .checklist div>span {
+            font-size: 12px;
+            color: var(--muted);
+            display: block;
+            margin-top: 2px
+        }
+
+        .eligibility-grid .eligibility-card>p {
+            font-size: 10px;
+            margin: 17px 0 0
+        }
+
+        .faq-section {
+            padding: 0 0 88px
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 80px;
+            border-top: 1px solid var(--line);
+            padding-top: 60px
+        }
+
+        .faq-grid h2 {
+            font-size: 37px
+        }
+
+        .faq-grid>div>p {
+            font-size: 13px;
+            margin-top: 20px;
+            max-width: 320px
+        }
+
+        .faq details {
+            border-bottom: 1px solid var(--line)
+        }
+
+        .faq summary {
+            padding: 19px 0;
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            font-size: 13px;
+            font-weight: 700
+        }
+
+        .faq summary::-webkit-details-marker,
+        .direct-registration summary::-webkit-details-marker {
+            display: none
+        }
+
+        .faq summary span {
+            font-size: 22px;
+            font-weight: 400;
+            color: #a95830;
+            transition: transform .2s
+        }
+
+        .faq details[open] summary span {
+            transform: rotate(45deg)
+        }
+
+        .faq details p {
+            font-size: 12px;
+            line-height: 1.9;
+            padding: 0 20px 20px 0
+        }
+
+        /* B14. BORANG PERTANYAAN. */
+        .apply-section {
+            padding: 75px 0;
+            background: var(--ink);
+            color: white
+        }
+
+        .apply-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 90px;
+            align-items: center
+        }
+
+        .apply-copy .eyebrow {
+            color: #fdaf85
+        }
+
+        .apply-copy h2 {
+            font-size: 49px
+        }
+
+        .apply-copy em {
+            color: #ffa16f
+        }
+
+        .apply-copy>p {
+            font-size: 14px;
+            color: #bfcecd;
+            margin-top: 22px;
+            max-width: 390px
+        }
+
+        .steps {
+            list-style: none;
+            padding: 0;
+            margin: 32px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 19px
+        }
+
+        .steps li {
+            display: flex;
+            gap: 15px;
+            align-items: center
+        }
+
+        .steps li>span {
+            border: 1px solid #668086;
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+            display: grid;
+            place-items: center;
+            font-size: 10px;
+            color: #ffb48c
+        }
+
+        .steps b {
+            font-size: 13px;
+            display: block
+        }
+
+        .steps small {
+            font-size: 11px;
+            color: #b4c7c7;
+            display: block;
+            margin-top: 2px
+        }
+
+        .contact {
+            display: flex;
+            gap: 13px;
+            border-top: 1px solid #4b636b;
+            padding-top: 23px;
+            align-items: center
+        }
+
+        .contact-avatar {
+            width: 39px;
+            height: 39px;
+            background: #2c4952;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: bold;
+            color: #fda97a
+        }
+
+        .contact strong {
+            font-size: 13px;
+            display: block
+        }
+
+        .contact a {
+            margin-left: 12px;
+            font-weight: 400;
+            color: #d6e4e1
+        }
+
+        .contact div>span {
+            display: block;
+            font-size: 10px;
+            color: #bfcecd;
+            margin-top: 4px
+        }
+
+        .apply-card {
+            padding: 35px;
+            background: var(--pale);
+            color: var(--ink);
+            border-radius: 10px
+        }
+
+        .card-tag {
+            font-size: 9px;
+            color: #8f4a22;
+            letter-spacing: 1.3px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 13px
+        }
+
+        .apply-card h3 {
+            font-size: 29px
+        }
+
+        .apply-card>p {
+            font-size: 12px;
+            margin-top: 11px
+        }
+
+        .apply-card form {
+            margin-top: 24px
+        }
+
+        fieldset {
+            border: 0;
+            padding: 0;
+            margin: 0 0 20px
+        }
+
+        legend,
+        .field-label {
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block
+        }
+
+        .role-options {
+            display: flex;
+            gap: 9px
+        }
+
+        .role-options label {
+            flex: 1;
+            cursor: pointer
+        }
+
+        .role-options input {
+            position: absolute;
+            opacity: 0;
+            width: 1px;
+            height: 1px
+        }
+
+        .role-options span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            padding: 10px 7px;
+            border: 1px solid #c7d1cc;
+            border-radius: 4px;
+            font-size: 11px;
+            min-height: 43px
+        }
+
+        .role-options input:checked+span {
+            border-color: var(--ink);
+            background: #e6ece3;
+            font-weight: bold;
+            box-shadow: inset 0 0 0 1px var(--ink)
+        }
+
+        .role-options input:focus-visible+span {
+            outline: 3px solid #b34b16;
+            outline-offset: 3px
+        }
+
+        .field-label>span {
+            font-weight: 400;
+            color: var(--muted)
+        }
+
+        input[type=text],
+        select {
+            border: 1px solid #c7d1cc;
+            border-radius: 4px;
+            min-height: 46px;
+            padding: 10px 12px;
+            background: white;
+            width: 100%;
+            font-size: 12px;
+            color: var(--ink);
+            margin-bottom: 18px
+        }
+
+        .whatsapp {
+            background: #245a43;
+            color: white;
+            width: 100%;
+            min-height: 51px;
+            gap: 15px
+        }
+
+        .whatsapp:hover {
+            background: #1b4834
+        }
+
+        .whatsapp svg {
+            height: 20px;
+            width: 20px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.5
+        }
+
+        .privacy {
+            font-size: 10px;
+            text-align: center;
+            margin-top: 13px
+        }
+
+        .direct-registration {
+            border-top: 1px solid var(--line);
+            padding-top: 18px;
+            margin-top: 20px
+        }
+
+        .direct-registration summary {
+            font-size: 11px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: underline;
+            list-style: none
+        }
+
+        .direct-registration p {
+            font-size: 10px;
+            margin-top: 10px
+        }
+
+        .direct-registration .text-link {
+            font-size: 11px;
+            margin-top: 12px
+        }
+
+        /* B15. FOOTER. */
+        footer {
+            background: #f0eee8;
+            padding: 35px 0 20px
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            padding-bottom: 30px
+        }
+
+        .footer-top p {
+            font-size: 12px
+        }
+
+        .footer-top p strong {
+            font-weight: 500;
+            color: var(--ink)
+        }
+
+        .footer-contact {
+            font-size: 12px;
+            font-weight: 700
+        }
+
+        .footer-contact>span {
+            margin-left: 15px
+        }
+
+        .footer-contact small {
+            display: block;
+            font-size: 11px;
+            font-weight: 400;
+            color: var(--muted)
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            border-top: 1px solid #d7ded5;
+            padding-top: 18px;
+            font-size: 9px;
+            color: var(--muted)
+        }
+
+        .mobile-action {
+            display: none
+        }
+
+        /* B16. SKRIN BESAR — peraturan ini hanya digunakan pada lebar 1500px ke atas. */
+        @media(min-width:1500px) {
+            .hero {
+                padding: 68px 0
+            }
+
+            .hero-visual {
+                min-height: 535px
+            }
+        }
+
+        /* B17. KOMPUTER KECIL — penyesuaian pada lebar 1100px ke bawah. */
+        @media(max-width:1100px) {
+            .container {
+                width: calc(100% - 56px)
+            }
+
+            .nav nav {
+                gap: 18px
+            }
+
+            .nav .logo>span {
+                display: none
+            }
+
+            .hero-grid {
+                gap: 35px
+            }
+
+            .hero-visual {
+                min-height: 485px
+            }
+
+            .hero h1 {
+                font-size: clamp(40px, 4.6vw, 53px);
+                letter-spacing: -2px
+            }
+
+            .lead {
+                font-size: 14px
+            }
+
+            .hero-actions {
+                gap: 16px
+            }
+
+            .hero-actions .button {
+                padding-inline: 18px;
+                font-size: 12px
+            }
+
+            .hero .eyebrow {
+                font-size: 8px
+            }
+
+            .proof-grid>div {
+                padding-inline: 14px;
+                gap: 10px
+            }
+
+            .proof-grid p strong {
+                font-size: 11px
+            }
+
+            .proof-icon {
+                display: none
+            }
+
+            .future-grid,
+            .eligibility-grid,
+            .apply-grid,
+            .faq-grid {
+                gap: 45px
+            }
+
+            .future h2 {
+                font-size: 36px
+            }
+
+            .fund-amount {
+                font-size: 48px
+            }
+
+            .funding-grid article {
+                padding: 25px
+            }
+
+            .fund-icon {
+                right: 17px;
+                top: 17px
+            }
+
+            .learning-grid {
+                gap: 35px
+            }
+
+            .parent-note {
+                gap: 22px
+            }
+
+            .apply-copy h2 {
+                font-size: 43px
+            }
+
+            .apply-card {
+                padding: 27px
+            }
+
+            .contact a {
+                display: block;
+                margin-left: 0
+            }
+
+            .learning-topics h3 {
+                font-size: 18px
+            }
+        }
+
+        /* B18. TABLET — penyesuaian pada lebar 800px ke bawah. */
+        @media(max-width:800px) {
+            .nav {
+                min-height: 72px
+            }
+
+            .nav nav {
+                gap: 16px;
+                font-size: 11px
+            }
+
+            .nav-cta {
+                display: none
+            }
+
+            .nav .logo>span {
+                display: block
+            }
+
+            .hero-grid {
+                gap: 26px
+            }
+
+            .hero h1 {
+                font-size: 38px;
+                letter-spacing: -1.8px
+            }
+
+            .hero-visual {
+                min-height: 455px
+            }
+
+            .hero-actions {
+                flex-wrap: wrap;
+                gap: 16px
+            }
+
+            .hero-micro {
+                font-size: 10px
+            }
+
+            .programme-label {
+                font-size: 10px
+            }
+
+            .practice-stamp {
+                padding: 15px 19px;
+                gap: 15px;
+                left: -15px
+            }
+
+            .practice-stamp p {
+                font-size: 10px
+            }
+
+            .practice-stamp strong {
+                font-size: 39px
+            }
+
+            .practice-stamp>div {
+                padding-right: 15px
+            }
+
+            .hero-photo-copy {
+                left: 23px
+            }
+
+            .hero-photo-copy strong {
+                font-size: 25px
+            }
+
+            .hero .eyebrow {
+                letter-spacing: .8px
+            }
+
+            .hero .rule {
+                display: none
+            }
+
+            .section-heading {
+                gap: 30px
+            }
+
+            .section-heading>p {
+                max-width: 260px;
+                font-size: 12px
+            }
+
+            .section h2 {
+                font-size: 34px
+            }
+
+            .future-grid {
+                gap: 30px
+            }
+
+            .future p {
+                font-size: 13px
+            }
+
+            .demo {
+                padding: 20px
+            }
+
+            .fund-amount {
+                font-size: 43px
+            }
+
+            .funding-grid h3 {
+                font-size: 16px
+            }
+
+            .fund-icon {
+                display: none
+            }
+
+            .funding-grid article {
+                padding: 20px
+            }
+
+            .parent-note {
+                grid-template-columns: 1fr 1.4fr
+            }
+
+            .parent-tags {
+                grid-column: 1/-1;
+                flex-direction: row;
+                flex-wrap: wrap
+            }
+
+            .career-detail {
+                padding: 27px
+            }
+
+            .career-options button {
+                font-size: 12px;
+                gap: 12px;
+                padding: 20px 17px
+            }
+
+            .fit-panel {
+                grid-template-columns: 1fr;
+                gap: 20px
+            }
+
+            .fit-panel h3 {
+                display: none
+            }
+
+            .fit-panel .eyebrow {
+                margin: 0
+            }
+
+            .eligibility-grid,
+            .faq-grid,
+            .apply-grid {
+                gap: 30px
+            }
+
+            .apply-card {
+                padding: 24px
+            }
+
+            .apply-card h3 {
+                font-size: 25px
+            }
+
+            .apply-copy h2 {
+                font-size: 38px
+            }
+
+            .section {
+                padding: 65px 0
+            }
+
+            .eligibility-card {
+                padding: 25px
+            }
+        }
+
+        /* B19. TELEFON — lajur disusun menegak dan butang bawah dipaparkan. */
+        @media(max-width:620px) {
+            html {
+                scroll-padding-top: 90px
+            }
+
+            .container {
+                width: calc(100% - 40px)
+            }
+
+            .announcement .container {
+                font-size: 8px;
+                letter-spacing: .8px;
+                padding-block: 8px
+            }
+
+            .nav {
+                min-height: 69px;
+                gap: 15px
+            }
+
+            .logo>b {
+                font-size: 36px
+            }
+
+            .logo>span {
+                font-size: 7px
+            }
+
+            .logo>span strong {
+                font-size: 9px
+            }
+
+            .menu {
+                display: flex;
+                align-items: center;
+                justify-content: center
+            }
+
+            .nav nav {
+                display: none;
+                position: absolute;
+                top: 69px;
+                left: 0;
+                right: 0;
+                padding: 18px 20px 22px;
+                background: var(--pale);
+                border-bottom: 1px solid var(--line);
+                box-shadow: 0 12px 20px #142b3510;
+                flex-direction: column;
+                gap: 0;
+                font-size: 14px
+            }
+
+            .nav nav a {
+                padding: 10px 0
+            }
+
+            .nav nav.open {
+                display: flex
+            }
+
+            .hero {
+                padding: 30px 0 36px
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 30px
+            }
+
+            .hero-copy {
+                padding: 0
+            }
+
+            .hero .eyebrow {
+                font-size: 8px;
+                letter-spacing: 1.1px;
+                margin-bottom: 18px
+            }
+
+            .hero .rule {
+                display: block;
+                width: 17px
+            }
+
+            .hero h1 {
+                font-size: clamp(35px, 9.6vw, 55px);
+                letter-spacing: -1.8px
+            }
+
+            .lead {
+                font-size: 14px;
+                max-width: 440px;
+                margin-top: 18px;
+                line-height: 1.8
+            }
+
+            .programme-label {
+                margin-top: 18px;
+                font-size: 10px
+            }
+
+            .programme-label span:last-child {
+                max-width: 200px
+            }
+
+            .hero-actions {
+                margin-top: 23px;
+                gap: 22px
+            }
+
+            .hero-actions .button {
+                min-height: 50px;
+                padding: 14px 20px;
+                font-size: 12px
+            }
+
+            .hero-actions .text-link {
+                font-size: 12px
+            }
+
+            .hero-micro {
+                font-size: 10px;
+                margin-top: 15px
+            }
+
+            .hero-micro span {
+                margin-inline: 3px
+            }
+
+            .hero-visual {
+                min-height: 330px;
+                border-radius: 8px 8px 50px 8px;
+                margin-left: 8px
+            }
+
+            .hero-photo {
+                object-position: center 57%
+            }
+
+            .image-top {
+                padding: 19px
+            }
+
+            .photo-mark {
+                font-size: 7px
+            }
+
+            .hero-photo-copy {
+                bottom: 132px;
+                left: 22px
+            }
+
+            .hero-photo-copy strong {
+                font-size: 28px
+            }
+
+            .hero-photo-copy span {
+                font-size: 12px
+            }
+
+            .practice-stamp {
+                left: -8px;
+                bottom: 33px;
+                padding: 14px 21px;
+                gap: 22px
+            }
+
+            .practice-stamp strong {
+                font-size: 41px
+            }
+
+            .practice-stamp p {
+                font-size: 11px
+            }
+
+            .practice-stamp>div {
+                padding-right: 20px
+            }
+
+            .photo-credit {
+                bottom: 10px;
+                left: 22px;
+                font-size: 8px
+            }
+
+            .proof-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 22px 0;
+                padding-block: 22px
+            }
+
+            .proof-grid>div {
+                padding-inline: 17px;
+                border-right: 0
+            }
+
+            .proof-grid>div:nth-child(odd) {
+                padding-left: 0;
+                border-right: 1px solid #cbd2cc
+            }
+
+            .proof-grid>div:nth-child(even) {
+                padding-right: 0
+            }
+
+            .proof-grid p strong {
+                font-size: 11px
+            }
+
+            .proof-grid p span {
+                font-size: 9px
+            }
+
+            .section {
+                padding: 54px 0
+            }
+
+            .eyebrow {
+                font-size: 9px;
+                letter-spacing: 1.4px;
+                margin-bottom: 16px
+            }
+
+            .section h2,
+            h2 {
+                font-size: 34px;
+                letter-spacing: -1.4px
+            }
+
+            .section-heading {
+                display: block;
+                margin-bottom: 27px
+            }
+
+            .section-heading>p {
+                max-width: none;
+                margin-top: 19px;
+                font-size: 13px
+            }
+
+            .learning-grid {
+                grid-template-columns: 1fr;
+                gap: 23px
+            }
+
+            .learning-feature {
+                min-height: 325px
+            }
+
+            .learning-feature>div {
+                bottom: 25px;
+                left: 25px;
+                right: 25px
+            }
+
+            .learning-feature h3 {
+                font-size: 32px;
+                margin: 12px 0
+            }
+
+            .learning-feature p {
+                font-size: 12px
+            }
+
+            .learning-topics article {
+                padding: 18px 0
+            }
+
+            .learning-topics article:first-child {
+                padding-top: 6px
+            }
+
+            .learning-topics h3 {
+                font-size: 18px
+            }
+
+            .learning-topics p {
+                font-size: 12px
+            }
+
+            .asset-note {
+                font-size: 10px;
+                margin-top: 13px
+            }
+
+            .fit-panel {
+                margin-top: 25px;
+                padding: 23px 20px;
+                gap: 16px
+            }
+
+            .interest-buttons {
+                gap: 7px
+            }
+
+            .interest-buttons button {
+                font-size: 10px;
+                padding: 9px 11px
+            }
+
+            .fit-main p {
+                font-size: 12px;
+                min-height: 60px
+            }
+
+            .future-grid {
+                grid-template-columns: 1fr;
+                gap: 30px
+            }
+
+            .future h2 {
+                font-size: 34px
+            }
+
+            .future p {
+                font-size: 13px;
+                margin-top: 20px
+            }
+
+            .future-tags {
+                margin-top: 22px
+            }
+
+            .demo {
+                padding: 22px
+            }
+
+            .demo-top {
+                font-size: 7px
+            }
+
+            .demo p {
+                font-size: 10px;
+                margin-top: 12px
+            }
+
+            .career-layout {
+                grid-template-columns: 1fr;
+                gap: 18px
+            }
+
+            .career-options {
+                gap: 7px
+            }
+
+            .career-options button {
+                min-height: 58px;
+                padding: 15px 18px;
+                font-size: 12px
+            }
+
+            .career-detail {
+                padding: 27px
+            }
+
+            .career-detail h3 {
+                font-size: 29px
+            }
+
+            .career-detail>p {
+                font-size: 12px
+            }
+
+            .career-detail #career-skills {
+                min-height: 35px
+            }
+
+            .funding-grid {
+                grid-template-columns: 1fr;
+                gap: 12px
+            }
+
+            .funding-grid article {
+                padding: 24px;
+                display: grid;
+                grid-template-columns: .85fr 1.15fr;
+                column-gap: 20px;
+                align-items: center
+            }
+
+            .fund-amount {
+                grid-row: 1/3;
+                font-size: 42px;
+                margin: 0
+            }
+
+            .fund-amount small {
+                font-size: 17px
+            }
+
+            .fund-amount>span {
+                font-size: 21px
+            }
+
+            .funding-grid h3 {
+                font-size: 16px;
+                margin-bottom: 7px;
+                line-height: 1.25
+            }
+
+            .funding-grid p {
+                font-size: 11px
+            }
+
+            .funding-note {
+                font-size: 10px;
+                margin-top: 16px;
+                margin-bottom: 25px
+            }
+
+            .parent-note {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 25px 0
+            }
+
+            .parent-title h3 {
+                font-size: 25px
+            }
+
+            .parent-title h3 br {
+                display: none
+            }
+
+            .parent-note p {
+                font-size: 12px
+            }
+
+            .parent-tags {
+                gap: 6px
+            }
+
+            .parent-tags span {
+                font-size: 9px;
+                padding: 5px 8px
+            }
+
+            .funding>.container>.micro {
+                font-size: 10px
+            }
+
+            .eligibility-grid {
+                grid-template-columns: 1fr;
+                gap: 28px
+            }
+
+            .eligibility-grid h2 br:nth-child(2) {
+                display: none
+            }
+
+            .eligibility-grid>div>p {
+                font-size: 13px;
+                margin: 19px 0 22px
+            }
+
+            .eligibility-card {
+                padding: 25px 22px
+            }
+
+            .eligibility-card h3 {
+                font-size: 23px
+            }
+
+            .checklist strong {
+                font-size: 12px
+            }
+
+            .checklist div>span {
+                font-size: 11px
+            }
+
+            .checklist li {
+                gap: 12px
+            }
+
+            .faq-section {
+                padding-bottom: 53px
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+                padding-top: 38px;
+                gap: 20px
+            }
+
+            .faq-grid h2 {
+                font-size: 31px
+            }
+
+            .faq-grid>div>p {
+                max-width: none;
+                margin-top: 16px;
+                font-size: 12px
+            }
+
+            .faq summary {
+                font-size: 12px;
+                padding: 18px 0;
+                gap: 14px
+            }
+
+            .faq details p {
+                font-size: 12px
+            }
+
+            .apply-section {
+                padding: 50px 0
+            }
+
+            .apply-grid {
+                grid-template-columns: 1fr;
+                gap: 30px
+            }
+
+            .apply-copy h2 {
+                font-size: 39px
+            }
+
+            .apply-copy>p {
+                font-size: 13px;
+                margin-top: 19px
+            }
+
+            .steps {
+                gap: 16px;
+                margin: 25px 0
+            }
+
+            .contact strong {
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap
+            }
+
+            .contact a {
+                display: inline
+            }
+
+            .apply-card {
+                padding: 25px 22px
+            }
+
+            .apply-card h3 {
+                font-size: 27px
+            }
+
+            .apply-card>p {
+                font-size: 11px
+            }
+
+            .role-options span {
+                font-size: 11px
+            }
+
+            input[type=text],
+            select {
+                font-size: 16px
+            }
+
+            .field-label {
+                font-size: 12px
+            }
+
+            .privacy {
+                font-size: 10px
+            }
+
+            .footer-top {
+                flex-wrap: wrap;
+                gap: 25px;
+                align-items: start
+            }
+
+            .footer-top .logo {
+                width: 100%
+            }
+
+            .footer-top p {
+                font-size: 11px
+            }
+
+            .footer-contact {
+                font-size: 11px;
+                margin-left: auto
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 5px;
+                font-size: 9px
+            }
+
+            footer {
+                padding-bottom: 110px
+            }
+
+            .mobile-action {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 45;
+                gap: 15px;
+                justify-content: space-between;
+                align-items: center;
+                padding: 12px 20px;
+                padding-bottom: max(12px, env(safe-area-inset-bottom));
+                background: #f8f6f1f5;
+                backdrop-filter: blur(12px);
+                border-top: 1px solid #c7d1ca;
+                box-shadow: 0 -5px 20px #142b3508
+            }
+
+            .mobile-action strong {
+                display: block;
+                font-size: 10px
+            }
+
+            .mobile-action>div>span {
+                display: block;
+                font-size: 9px;
+                color: var(--muted);
+                margin-top: 2px
+            }
+
+            .mobile-action .button {
+                font-size: 11px;
+                min-height: 44px;
+                padding: 11px 13px;
+                gap: 13px
+            }
+
+            .mobile-action .button>span {
+                font-size: 16px
+            }
+        }
+
+        /* B20. TELEFON KECIL. */
+        @media(max-width:360px) {
+            .container {
+                width: calc(100% - 32px)
+            }
+
+            .hero h1 {
+                font-size: 34px
+            }
+
+            .hero .eyebrow {
+                font-size: 7px
+            }
+
+            .hero-actions {
+                gap: 15px
+            }
+
+            .hero-actions .button {
+                padding-inline: 15px
+            }
+
+            .hero-actions .text-link {
+                font-size: 11px
+            }
+
+            .hero-micro {
+                font-size: 9px
+            }
+
+            .funding-grid article {
+                padding: 19px;
+                gap: 13px
+            }
+
+            .fund-amount {
+                font-size: 36px
+            }
+
+            .mobile-action {
+                padding-inline: 15px;
+                gap: 10px
+            }
+
+            .mobile-action strong {
+                font-size: 9px
+            }
+
+            .mobile-action .button {
+                font-size: 10px
+            }
+
+            .contact strong {
+                font-size: 12px
+            }
+        }
+
+        /* B21. AKSESIBILITI — kurangkan animasi jika diminta oleh tetapan pengguna. */
+        @media(prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto
+            }
+
+            *,
+            *:before,
+            *:after {
+                transition: none !important;
+                animation: none !important
+            }
+        }
+
+        .arrow-icon {
+            width: 17px;
+            height: 17px;
+            display: inline-block;
+            vertical-align: middle;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.6
+        }
+
+        .announcement .arrow-icon {
+            width: 10px;
+            height: 10px
+        }
+
+        .career-options .arrow-icon {
+            width: 19px;
+            height: 19px
+        }
+
+        .hero-grid>*,
+        .learning-grid>*,
+        .future-grid>*,
+        .career-layout>*,
+        .eligibility-grid>*,
+        .faq-grid>*,
+        .apply-grid>* {
+            min-width: 0
+        }
+
+        @media(max-width:360px) {
+            .demo {
+                padding: 17px
+            }
+
+            .demo-top {
+                letter-spacing: .4px;
+                gap: 7px;
+                font-size: 6px
+            }
+
+            .demo-steps {
+                gap: 7px
+            }
+
+            .demo-steps>div {
+                gap: 5px
+            }
+
+            .demo-steps strong {
+                font-size: 9px
+            }
+
+            .demo-steps span {
+                font-size: 9px
+            }
+
+            .demo-steps b {
+                font-size: 8px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- BAHAGIAN C — KANDUNGAN YANG DILIHAT OLEH PELAWAT -->
+    <a class="skip" href="#utama">
+        Langkau ke kandungan
+    </a>
+    <!--
+01. BANNER PENGAMBILAN — UBAH DI SINI: bulan dan tahun.
+-->
+    <div class="announcement">
+        <div class="container">
+            <span>
+                <i>
+                </i>
+                PENGAMBILAN JANUARI 2027
+            </span>
+            <span>
+                Tuaran, Sabah
+                <span aria-hidden="true">
+                    <svg aria-hidden="true" class="arrow-icon" viewbox="0 0 24 25">
+                        <path d="M6 18 18 6M6 6h12v12">
+                        </path>
+                    </svg>
+                </span>
+            </span>
+        </div>
+    </div>
+    <!--
+02. HEADER DAN MENU — href="#program" membawa pelawat ke id="program".
+-->
+    <header class="header">
+        <div class="container nav">
+
+            <a aria-label="Kolej VIS Mechatronic" class="logo" href="#utama">
+
+                <!-- GAMBAR LOGO -->
+                <img src="images/logovis.jpg" alt="Logo VIS Mechatronic" style="width: 100%;
+                        max-width: 320px;
+                        height: auto;">
+
+            </a>
+            <nav aria-label="Menu utama" id="navigation">
+                <a href="#program">
+                    Program
+                </a>
+                <a href="#kerjaya">
+                    Peluang kerjaya
+                </a>
+                <a href="#pembiayaan">
+                    Pembiayaan
+                </a>
+                <a href="#soalan">
+                    Soalan lazim
+                </a>
+            </nav>
+            <a class="button small primary nav-cta" href="#mohon">
+                Semak kelayakan
+                <span aria-hidden="true">
+                    <svg aria-hidden="true" class="arrow-icon" viewbox="0 0 24 24">
+                        <path d="M6 18 18 6M6 6h12v12">
+                        </path>
+                    </svg>
+                </span>
+            </a>
+            <button aria-controls="navigation" aria-expanded="false" aria-label="Buka menu" class="menu" type="button">
+                <svg aria-hidden="true" viewbox="0 0 24 24">
+                    <path d="M4 7h16M4 12h16M4 17h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </header>
+    <main id="utama">
+        <!--
+03. PAPARAN UTAMA — UBAH DI SINI: tajuk, ayat promosi dan gambar.
+-->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <div class="eyebrow">
+                        <p style="font-family: Arial, sans-serif;
+                            font-size: 12px;
+                            color: #8f5305;
+                            "> KEMAHIRAN UNTUK ANAK SABAH
+                        </p>
+                    </div>
+                    <h1>
+                        Minat teknikal?
+                        <br />
+                        Bina masa depan
+                        <br />
+                        dengan
+                        <em>
+                            <p style="
+                            font-size: 46px;
+                            color: #ed7035;
+                            "> MEKATRONIK.
+                            </p>
+                        </em>
+                    </h1>
+                    <p class="lead">
+                        Kuasai kemahiran praktikal dan bina langkah ke alam pekerjaan bersama
+                        <strong>
+                            Kolej VIS Mechatronic, Tuaran.
+                        </strong>
+                    </p>
+                    <div class="programme-label">
+                        <span>
+                            SKM TAHAP 3
+                        </span>
+                        <span>
+                            Kejuruteraan Teknologi Mekatronik
+                        </span>
+                    </div>
+                    <div class="hero-actions">
+                        <a class="button primary" href="#mohon">
+                            Semak kelayakan saya
+                            <span aria-hidden="true">
+                                <svg aria-hidden="true" class="arrow-icon" viewbox="0 0 24 24">
+                                    <path d="M6 18 18 6M6 6h12v12">
+                                    </path>
+                                </svg>
+                            </span>
+                        </a>
+                        <a class="text-link" href="#program">
+                            Lihat program
+                            <span aria-hidden="true">
+                                ↓
+                            </span>
+                        </a>
+                    </div>
+                    <p class="micro hero-micro">
+                        Tiada syarat sijil akademik*
+                        <span>
+                            ·
+                        </span>
+                        Menguasai asas 3M <strong>(Membaca, Menulis dan Mengira)</strong>
+                        <span>
+                            ·
+                        </span>
+                        Umur 15–30 tahun
+                        <span>
+                            ·
+                        </span>
+                        Tempoh pengajian 18 bulan
+                    </p>
+                </div>
+                <div class="hero-visual">
+                    <!-- gambar plc. -->
+                    <img alt="Ilustrasi kerja amali elektronik pada papan litar" class="hero-photo" fetchpriority="high"
+                        height="934" img src="images/plcrobotic.png" width="1400" />
+                    <div class="image-top">
+                        <span class="photo-mark">
+                            BELAJAR DENGAN MELAKUKAN
+                        </span>
+                        <span aria-hidden="true" class="photo-symbol">
+                            +
+                        </span>
+                    </div>
+                    <div class="hero-photo-copy">
+                        <span>
+                            Bermula Dengan Minat,
+                        </span>
+                        <strong>
+                            Berkembang Menjadi Kemahiran.
+                        </strong>
+                    </div>
+                    <div class="practice-stamp">
+                        <div>
+                            <strong>
+                                70
+                                <span>
+                                    %
+                                </span>
+                            </strong>
+                            <span>
+                                AMALI
+                            </span>
+                        </div>
+                        <p>
+                            Belajar secara praktikal.
+                            <br />
+                            Bina kemahiran sebenar.
+                        </p>
+                    </div>
+                    <span class="photo-credit">
+                        Gambar PLC & Robotik industri
+                    </span>
+                </div>
+            </div>
+        </section>
+        <!--
+04. RINGKASAN PROGRAM — sijil, amali, tempoh dan asrama.
+-->
+        <!-- RINGKASAN PROGRAM DENGAN GAMBAR -->
+        <div class="proof-strip">
+            <div class="container kelebihan-grid">
+
+                <!-- GAMBAR 1: SIJIL / LOGO JPK -->
+                <div class="kelebihan-kad">
+                    <img src="images/jpk.png" alt="Sijil Kemahiran Malaysia" class="kelebihan-gambar gambar-logo"
+                        style="height: auto; object-fit: cover;">
+
+                    <div class="kelebihan-teks">
+                        <strong>Sijil Kemahiran Malaysia (Tahap 3)</strong>
+                        <p>Diiktiraf oleh Jabatan Pembangunan Kemahiran</p>
+                    </div>
+                </div>
+
+                <!-- GAMBAR 2: AKTIVITI AMALI -->
+                <div class="kelebihan-kad">
+
+                    <img src="images/Hands-on.png" alt="Aktiviti pembelajaran amali" class="kelebihan-gambar"
+                        style="height: auto; object-fit: cover;">
+
+                    <div class="kelebihan-teks">
+                        <strong>70% Amali · 30% Teori</strong>
+                        <p>Belajar melalui latihan praktikal.</p>
+                    </div>
+
+                </div>
+                <!-- GAMBAR 3: PEMBELAJARAN PELAJAR -->
+                <div class="kelebihan-kad">
+                    <img src="images/pembelajaran.jpg" alt="Suasana pembelajaran pelajar" class="kelebihan-gambar">
+
+                    <div class="kelebihan-teks">
+                        <strong>1 Tahun 6 Bulan (18 Bulan)</strong>
+                        <p>Tempoh Latihan Kemahiran</p>
+                    </div>
+                </div>
+
+                <!-- GAMBAR 4: ASRAMA -->
+                <div class="kelebihan-kad">
+                    <img src="images/asrama.jpg" alt="Kemudahan asrama" class="kelebihan-gambar">
+
+                    <div class="kelebihan-teks">
+                        <strong>Asrama Disediakan*</strong>
+                        <p>Tertakluk kepada kekosongan serta terma dan syarat.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--
+05. PROGRAM DAN PILIHAN MINAT — teks dalam butang dikawal JavaScript.
+-->
+        <section class="section" id="program">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <div class="eyebrow">
+                            01 / KENALI PROGRAM
+                        </div>
+                        <h2>
+                            Suka tahu bagaimana
+                            <br />
+                            sesuatu
+                            <em>
+                                berfungsi?
+                            </em>
+                        </h2>
+                    </div>
+                    <p>
+                        Mekatronik menggabungkan elektrik, elektronik, mekanikal dan pengaturcaraan untuk mengendalikan
+                        mesin serta sistem automatik.
+                    </p>
+                </div>
+                <div class="learning-grid">
+                    <article class="learning-feature">
+                        <!-- UBAH GAMBAR: gantikan nilai src dengan URL gambar anda. Internet diperlukan untuk foto ini. -->
+                        <img alt="Ilustrasi kerja reka bentuk dan perancangan teknikal" height="667" loading="lazy"
+                            src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1000&amp;q=85"
+                            width="1000" />
+                        <div>
+                            <span class="tag">
+                                SATU BIDANG. PELBAGAI KEMAHIRAN.
+                            </span>
+                            <h3>
+                                Fahami. Pasang.
+                                <br />
+                                Uji. Selesaikan.
+                            </h3>
+                            <p>
+                                Daripada mengenali komponen kepada memahami cara satu sistem bekerja bersama.
+                            </p>
+                        </div>
+                    </article>
+                    <div class="learning-topics">
+                        <article>
+                            <span class="topic-number">
+                                01
+                            </span>
+                            <div>
+                                <h3>
+                                    Elektrik &amp; elektronik
+                                </h3>
+                                <p>
+                                    Kenali litar, sambungan, sensor dan komponen kawalan.
+                                </p>
+                            </div>
+                        </article>
+                        <article>
+                            <span class="topic-number">
+                                02
+                            </span>
+                            <div>
+                                <h3>
+                                    Mekanikal &amp; penyelenggaraan
+                                </h3>
+                                <p>
+                                    Fahami pergerakan mesin, pemasangan dan asas mengesan masalah.
+                                </p>
+                            </div>
+                        </article>
+                        <article>
+                            <span class="topic-number">
+                                03
+                            </span>
+                            <div>
+                                <h3>
+                                    Komputer &amp; pengaturcaraan
+                                </h3>
+                                <p>
+                                    Terokai logik arahan yang membantu sistem bertindak.
+                                </p>
+                            </div>
+                        </article>
+                        <article>
+                            <span class="topic-number">
+                                04
+                            </span>
+                            <div>
+                                <h3>
+                                    Reka bentuk &amp; automasi
+                                </h3>
+                                <p>
+                                    Kenali CAD, pneumatik, hidraulik, robotik dan IoT.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <p class="micro asset-note">
+                    Foto ialah ilustrasi, bukan foto pelajar atau fasiliti Kolej VIS. Aktiviti dan peralatan sebenar
+                    mengikut modul kolej.
+                </p>
+                <div class="fit-panel">
+                    <div>
+                        <span class="eyebrow">
+                            MULA DENGAN MINAT ANDA
+                        </span>
+                        <h3>
+                            “Saya suka…”
+                        </h3>
+                    </div>
+                    <div class="fit-main">
+                        <div aria-label="Pilih minat" class="interest-buttons">
+                            <button aria-pressed="true" data-interest="repair" type="button">
+                                Membaiki barang
+                            </button>
+                            <button aria-pressed="false" data-interest="code" type="button">
+                                Komputer &amp; kod
+                            </button>
+                            <button aria-pressed="false" data-interest="design" type="button">
+                                Reka bentuk
+                            </button>
+                            <button aria-pressed="false" data-interest="robot" type="button">
+                                Mesin &amp; robot
+                            </button>
+                        </div>
+                        <p aria-live="polite" id="interest-result">
+                            Minat mencari punca kerosakan? Terokai kemahiran pengujian komponen dan penyelenggaraan
+                            sistem.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--
+06. TEKNOLOGI MASA DEPAN DAN SIMULASI CONVEYOR.
+-->
+        <section class="future section">
+            <div class="container future-grid">
+                <div>
+                    <div class="eyebrow">
+                        BUKAN SEKADAR TEKNOLOGI HARI INI
+                    </div>
+                    <h2>
+                        Mesin semakin pintar.
+                        <br />
+                        <em>
+                            Kemahiran anda
+                            <br />
+                            tetap diperlukan.
+                        </em>
+                    </h2>
+                    <p>
+                        Di sebalik automasi, ada orang yang memasang, menguji dan menyelenggara sistem. Asas mekatronik
+                        menghubungkan anda dengan dunia robotik, IoT dan kilang pintar.
+                    </p>
+                    <div class="future-tags">
+                        <span>
+                            Robotik
+                        </span>
+                        <span>
+                            Internet of Things
+                        </span>
+                        <span>
+                            Automasi industri
+                        </span>
+                    </div>
+                </div>
+                <div class="demo" id="demo">
+                    <div class="demo-top">
+                        <span>
+                            CONTOH / CONVEYOR BERSENSOR
+                        </span>
+                        <span class="live">
+                            <i>
+                            </i>
+                            DEMO
+                        </span>
+                    </div>
+                    <div aria-hidden="true" class="demo-scene">
+                        <div class="sensor">
+                            <span>
+                                SENSOR
+                            </span>
+                            <i>
+                            </i>
+                        </div>
+                        <div class="parcel">
+                        </div>
+                        <div class="conveyor">
+                        </div>
+                    </div>
+                    <div class="demo-steps">
+                        <div>
+                            <b>
+                                01
+                            </b>
+                            <span>
+                                Sensor
+                                <br />
+                                <strong>
+                                    Mengesan
+                                </strong>
+                            </span>
+                        </div>
+                        <div>
+                            <b>
+                                02
+                            </b>
+                            <span>
+                                Program
+                                <br />
+                                <strong>
+                                    Memproses
+                                </strong>
+                            </span>
+                        </div>
+                        <div>
+                            <b>
+                                03
+                            </b>
+                            <span>
+                                Motor
+                                <br />
+                                <strong>
+                                    Menggerakkan
+                                </strong>
+                            </span>
+                        </div>
+                    </div>
+                    <button class="button demo-button" id="run-demo" type="button">
+                        Lihat cara ia bekerja
+                        <span aria-hidden="true">
+                            ▶
+                        </span>
+                    </button>
+                    <p aria-live="polite" class="micro" id="demo-status">
+                        Tekan untuk mencuba simulasi ringkas automasi.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!--
+07. PELUANG KERJAYA — data setiap pilihan ada dalam BAHAGIAN D.
+-->
+        <section class="section" id="kerjaya">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <div class="eyebrow">
+                            02 / BAYANGKAN LANGKAH SETERUSNYA
+                        </div>
+                        <h2>
+                            Kemahiran yang membuka
+                            <br />
+                            <em>
+                                lebih banyak arah.
+                            </em>
+                        </h2>
+                    </div>
+                    <p>
+                        Kenali contoh peranan teknikal yang menggunakan asas mekatronik. Pilih kerjaya untuk lihat tugas
+                        dan kemahiran berkaitan.
+                    </p>
+                </div>
+                <div class="career-layout">
+                    <div aria-label="Terokai contoh kerjaya" class="career-options">
+                        <button aria-pressed="true" data-career="maintenance" type="button">
+                            <span>
+                                01
+                            </span>
+                            Juruteknik penyelenggaraan
+                            <b aria-hidden="true">
+                                <svg aria-hidden="true" class="arrow-icon" viewbox="0 0 24 24">
+                                    <path d="M6 18 18 6M6 6h12v12">
+                                    </path>
+                                </svg>
+                            </b>
+                        </button>
+                        <button aria-pressed="false" data-career="automation" type="button">
+                            <span>
+                                02
+                            </span>
+                            Juruteknik automasi
+                            <b aria-hidden="true">
+                                <svg aria-hidden="true" class="arrow-icon" viewbox="0 0 24 24">
+                                    <path d="M6 18 18 6M6 6h12v12">
+                                    </path>
+                                </svg>
+                            </b>
+                        </button>
+                        <button aria-pressed="false" data-career="electronics" type="button">
+                            <span>
+                                03
+                            </span>
+                            Juruteknik elektronik
+                            <b aria-hidden="true">
+                                <svg aria-hidden="true" class="arrow-icon" viewbox="0 0 24 24">
+                                    <path d="M6 18 18 6M6 6h12v12">
+                                    </path>
+                                </svg>
+                            </b>
+                        </button>
+                        <button aria-pressed="false" data-career="production" type="button">
+                            <span>
+                                04
+                            </span>
+                            Juruteknik pengeluaran
+                            <b aria-hidden="true">
+                                <svg aria-hidden="true" class="arrow-icon" viewbox="0 0 24 24">
+                                    <path d="M6 18 18 6M6 6h12v12">
+                                    </path>
+                                </svg>
+                            </b>
+                        </button>
+                    </div>
+                    <article aria-live="polite" class="career-detail">
+                        <div class="eyebrow" id="career-sector">
+                            PENYELENGGARAAN / SERVIS
+                        </div>
+                        <h3 id="career-title">
+                            Pastikan mesin
+                            <br />
+                            terus berfungsi.
+                        </h3>
+                        <p id="career-description">
+                            Membuat pemeriksaan, mengenal pasti kerosakan dan membantu menyelenggara mesin dalam pasukan
+                            teknikal.
+                        </p>
+                        <span class="detail-label">
+                            KEMAHIRAN BERKAITAN
+                        </span>
+                        <p id="career-skills">
+                            Pemeriksaan komponen · Troubleshooting · Dokumentasi kerja
+                        </p>
+                        <a class="text-link" href="#mohon">
+                            Tanya tentang laluan ini
+                            <span aria-hidden="true">
+                                <svg aria-hidden="true" class="arrow-icon" viewbox="0 0 24 24">
+                                    <path d="M6 18 18 6M6 6h12v12">
+                                    </path>
+                                </svg>
+                            </span>
+                        </a>
+                    </article>
+                </div>
+                <p class="micro asset-note">
+                    Contoh laluan, bukan jaminan pekerjaan. Tawaran bergantung pada kemahiran, kekosongan dan syarat
+                    majikan; sesetengah jawatan memerlukan latihan tambahan.
+                </p>
+            </div>
+        </section>
+        <!--
+08. PEMBIAYAAN DAN MAKLUMAT IBU BAPA — UBAH DI SINI: jumlah dan syarat.
+-->
+        <section class="funding section" id="pembiayaan">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <div class="eyebrow">
+                            03 / RANCANG PEMBELAJARAN ANDA
+                        </div>
+                        <h2>
+                            Fokus belajar.
+                            <br />
+                            <em>
+                                Fahami pembiayaan.
+                            </em>
+                        </h2>
+                    </div>
+                    <p>
+                        Ketahui pilihan yang dinyatakan dalam pengambilan ini. Sir Zul boleh menerangkan syarat sebelum
+                        anda membuat keputusan.
+                    </p>
+                </div>
+                <div class="funding-grid">
+                    <article>
+                        <span aria-hidden="true" class="fund-icon">
+                            <svg aria-hidden="true" class="arrow-icon" viewbox="0 0 24 24">
+                                <path d="M6 18 18 6M6 6h12v12">
+                                </path>
+                            </svg>
+                        </span>
+                        <div class="fund-amount">
+                            100
+                            <span>
+                                %*
+                            </span>
+                        </div>
+                        <h3>
+                            Pembiayaan pinjaman PTPK
+                        </h3>
+                        <p>
+                            Pilihan pembiayaan latihan, tertakluk kepada kelayakan dan kelulusan.
+                        </p>
+                    </article>
+                    <article>
+                        <span aria-hidden="true" class="fund-icon">
+                            +
+                        </span>
+                        <div class="fund-amount">
+                            <small>
+                                RM
+                            </small>
+                            600
+                            <span>
+                                *
+                            </span>
+                        </div>
+                        <h3>
+                            Elaun bulanan
+                        </h3>
+                        <p>
+                            Semak syarat penerimaan dan jadual pembayaran dengan pihak kolej.
+                        </p>
+                    </article>
+                    <article>
+                        <span aria-hidden="true" class="fund-icon">
+                            +
+                        </span>
+                        <div class="fund-amount">
+                            <small>
+                                RM
+                            </small>
+                            1,000
+                            <span>
+                                *
+                            </span>
+                        </div>
+                        <h3>
+                            Bantuan one-off
+                        </h3>
+                        <p>
+                            Dapatkan penerangan tentang kelayakan dan terma bantuan.
+                        </p>
+                    </article>
+                </div>
+                <p class="funding-note">
+                    *Maklumat berdasarkan bahan pengambilan yang diberikan. PTPK ialah
+                    <strong>
+                        pinjaman, bukan biasiswa
+                    </strong>
+                    . Semak jumlah, bayaran balik serta terma elaun dan bantuan dengan kolej.
+                </p>
+                <div class="parent-note">
+                    <div class="parent-title">
+                        <span class="eyebrow">
+                            UNTUK IBU BAPA
+                        </span>
+                        <h3>
+                            Buat keputusan
+                            <br />
+                            dengan lebih yakin.
+                        </h3>
+                    </div>
+                    <div>
+                        <p>
+                            Bincangkan pengiktirafan program, jadual latihan, kos keseluruhan, asrama dan bantuan
+                            penempatan pekerjaan.
+                        </p>
+                        <a class="text-link" data-parent-link=""
+                            href="https://wa.me/60199254842?text=Salam%20Sir%20Zul%2C%20saya%20ibu%20bapa%20yang%20ingin%20bertanya%20tentang%20program%2C%20pembiayaan%20dan%20lawatan%20Kolej%20VIS.">
+                            Berbincang dengan Sir Zul
+                            <span aria-hidden="true">
+                                <svg aria-hidden="true" class="arrow-icon" viewbox="0 0 24 24">
+                                    <path d="M6 18 18 6M6 6h12v12">
+                                    </path>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="parent-tags">
+                        <span>
+                            SKM Tahap 3 / JPK*
+                        </span>
+                        <span>
+                            Asrama disediakan*
+                        </span>
+                        <span>
+                            Atur lawatan kolej
+                        </span>
+                    </div>
+                </div>
+                <p class="micro">
+                    *Pengiktirafan dan asrama dinyatakan dalam poster. Sahkan butiran program, kekosongan dan kos asrama
+                    semasa dengan pihak kolej.
+                </p>
+            </div>
+        </section>
+        <!--
+09. SYARAT KELAYAKAN.
+-->
+        <section class="section eligibility">
+            <div class="container eligibility-grid">
+                <div>
+                    <div class="eyebrow">
+                        04 / SIAPA BOLEH MEMOHON?
+                    </div>
+                    <h2>
+                        Belum ada SPM?
+                        <br />
+                        <em>
+                            Masih boleh
+                            <br />
+                            terokai peluang.
+                        </em>
+                    </h2>
+                    <p>
+                        Tiada syarat akademik dinyatakan dalam pengambilan ini. Yang penting, anda berminat untuk
+                        membina kemahiran teknikal.
+                    </p>
+                    <a class="button primary" href="#mohon">
+                        Semak kelayakan saya
+                        <span aria-hidden="true">
+                            <svg aria-hidden="true" class="arrow-icon" viewbox="0 0 24 24">
+                                <path d="M6 18 18 6M6 6h12v12">
+                                </path>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+                <div class="eligibility-card">
+                    <h3>
+                        Semak syarat asas
+                    </h3>
+                    <ul class="checklist">
+                        <li>
+                            <span aria-hidden="true" class="check">
+                                ✓
+                            </span>
+                            <div>
+                                <strong>
+                                    Warganegara Malaysia
+                                </strong>
+                                <span>
+                                    Berumur 15–30 tahun.
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <span aria-hidden="true" class="check">
+                                ✓
+                            </span>
+                            <div>
+                                <strong>
+                                    Boleh membaca, menulis &amp; mengira
+                                </strong>
+                                <span>
+                                    Kemahiran asas 3M.
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <span aria-hidden="true" class="check">
+                                ✓
+                            </span>
+                            <div>
+                                <strong>
+                                    Minat bidang teknikal
+                                </strong>
+                                <span>
+                                    Sedia belajar dan menjalani latihan amali.
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <span aria-hidden="true" class="check">
+                                ✓
+                            </span>
+                            <div>
+                                <strong>
+                                    Tiada SPM atau gagal SPM boleh bertanya
+                                </strong>
+                                <span>
+                                    Semakan akhir oleh pihak kolej.
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="micro">
+                        Maklumat ini panduan awal berdasarkan syarat pengambilan, bukan keputusan kelulusan permohonan.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!--
+10. SOALAN LAZIM — <details> boleh dibuka tanpa JavaScript.
+-->
+        <section class="faq-section" id="soalan">
+            <div class="container faq-grid">
+                <div>
+                    <div class="eyebrow">
+                        JAWAPAN SEBELUM ANDA MEMOHON
+                    </div>
+                    <h2>
+                        Masih tertanya-tanya?
+                    </h2>
+                    <p>
+                        Kami ringkaskan perkara yang biasanya ingin diketahui oleh pelajar dan ibu bapa.
+                    </p>
+                </div>
+                <div class="faq">
+                    <details>
+                        <summary>
+                            Perlu pandai teknikal sebelum masuk?
+                            <span aria-hidden="true">
+                                +
+                            </span>
+                        </summary>
+                        <p>
+                            Pengalaman teknikal tidak dinyatakan sebagai syarat pengambilan. Maklumkan latar belakang
+                            anda kepada Sir Zul untuk penerangan persediaan belajar.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>
+                            Berapa lama belajar dan sijil apa diperoleh?
+                            <span aria-hidden="true">
+                                +
+                            </span>
+                        </summary>
+                        <p>
+                            Program yang ditawarkan ialah Kejuruteraan Teknologi Mekatronik, SKM Tahap 3, dengan tempoh
+                            18 bulan. Sahkan tarikh mula, jadual dan butiran persijilan dengan pihak kolej.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>
+                            Adakah pembiayaan dan elaun automatik lulus?
+                            <span aria-hidden="true">
+                                +
+                            </span>
+                        </summary>
+                        <p>
+                            Tidak. Pembiayaan, elaun bulanan RM600 dan bantuan one-off RM1,000 tertakluk kepada
+                            kelayakan, kelulusan dan terma berkaitan. Minta penerangan bertulis tentang kos serta
+                            bayaran balik pinjaman sebelum bersetuju.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>
+                            Bagaimana dengan pekerjaan selepas tamat?
+                            <span aria-hidden="true">
+                                +
+                            </span>
+                        </summary>
+                        <p>
+                            Bahan pengambilan menyatakan peluang pekerjaan disediakan selepas tamat. Tanya tentang
+                            bentuk bantuan penempatan dan prosesnya. Tawaran kerja tetap bergantung pada kekosongan
+                            serta pemilihan majikan.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>
+                            Boleh lihat kolej dan asrama dahulu?
+                            <span aria-hidden="true">
+                                +
+                            </span>
+                        </summary>
+                        <p>
+                            Boleh hubungi Sir Zul untuk bertanya tentang lawatan, peralatan latihan, kemudahan asrama
+                            dan kos. Waktu pejabat: Isnin–Jumaat, 8.30 pagi–5.30 petang.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>
+                            Bagaimana hendak mula memohon?
+                            <span aria-hidden="true">
+                                +
+                            </span>
+                        </summary>
+                        <p>
+                            Mulakan dengan mesej WhatsApp kepada Sir Zul. Beliau boleh membantu menyemak kelayakan,
+                            menerangkan dokumen dan mengesahkan pautan pendaftaran untuk pengambilan November 2026.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+        <!--
+11. BORANG PERTANYAAN — bukan borang yang menyimpan data.
+-->
+        <section class="apply-section" id="mohon">
+            <div class="container apply-grid">
+                <div class="apply-copy">
+                    <div class="eyebrow">
+                        PENGAMBILAN NOVEMBER 2026
+                    </div>
+                    <h2>
+                        Langkah pertama
+                        <br />
+                        tak perlu
+                        <em>
+                            rumit.
+                        </em>
+                    </h2>
+                    <p>
+                        Beritahu kami apa yang anda ingin tahu. Mulakan perbualan dengan Sir Zul untuk memahami program
+                        dan menyemak kelayakan.
+                    </p>
+                    <ol class="steps">
+                        <li>
+                            <span>
+                                01
+                            </span>
+                            <div>
+                                <b>
+                                    Hubungi Sir Zul
+                                </b>
+                                <small>
+                                    Tanya tentang program atau kelayakan anda.
+                                </small>
+                            </div>
+                        </li>
+                        <li>
+                            <span>
+                                02
+                            </span>
+                            <div>
+                                <b>
+                                    Fahami pilihan anda
+                                </b>
+                                <small>
+                                    Semak kos, pembiayaan dan dokumen.
+                                </small>
+                            </div>
+                        </li>
+                        <li>
+                            <span>
+                                03
+                            </span>
+                            <div>
+                                <b>
+                                    Teruskan permohonan
+                                </b>
+                                <small>
+                                    Ikut panduan pendaftaran daripada kolej.
+                                </small>
+                            </div>
+                        </li>
+                    </ol>
+                    <div class="contact">
+                        <span aria-hidden="true" class="contact-avatar">
+                            SZ
+                        </span>
+                        <div>
+                            <strong>
+                                Sir Zul
+                                <a href="tel:+60199254842">
+                                    019-925 4842
+                                </a>
+                            </strong>
+                            <span>
+                                Isnin–Jumaat · 8.30 pagi–5.30 petang
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="apply-card">
+                    <span class="card-tag">
+                        MULAKAN DI SINI
+                    </span>
+                    <h3>
+                        Jom, semak peluang anda.
+                    </h3>
+                    <p>
+                        Tiada komitmen pendaftaran pada langkah ini.
+                    </p>
+                    <form id="enquiry">
+                        <fieldset>
+                            <legend>
+                                Saya seorang
+                            </legend>
+                            <div class="role-options">
+                                <label>
+                                    <input checked="" name="role" type="radio" value="Bakal pelajar" />
+                                    <span>
+                                        Bakal pelajar
+                                    </span>
+                                </label>
+                                <label>
+                                    <input name="role" type="radio" value="Ibu bapa / penjaga" />
+                                    <span>
+                                        Ibu bapa / penjaga
+                                    </span>
+                                </label>
+                            </div>
+                        </fieldset>
+                        <label class="field-label" for="name">
+                            Nama panggilan
+                            <span>
+                                (pilihan)
+                            </span>
+                        </label>
+                        <input autocomplete="given-name" id="name" maxlength="80" name="name"
+                            placeholder="Bagaimana kami boleh panggil anda?" type="text" />
+                        <label class="field-label" for="topic">
+                            Saya ingin tahu tentang
+                        </label>
+                        <select id="topic" name="topic">
+                            <option value="kelayakan dan cara memohon">
+                                Kelayakan &amp; cara memohon
+                            </option>
+                            <option value="program dan pembelajaran amali">
+                                Program &amp; pembelajaran amali
+                            </option>
+                            <option value="pinjaman PTPK, elaun dan kos">
+                                PTPK, elaun &amp; kos
+                            </option>
+                            <option value="asrama dan lawatan kolej">
+                                Asrama &amp; lawatan kolej
+                            </option>
+                            <option value="bantuan penempatan pekerjaan">
+                                Peluang selepas tamat belajar
+                            </option>
+                        </select>
+                        <button class="button whatsapp" type="submit">
+                            Semak melalui WhatsApp
+                            <svg aria-hidden="true" viewbox="0 0 24 24">
+                                <path d="M7 17 17 7M7 7h10v10">
+                                </path>
+                            </svg>
+                        </button>
+                        <p class="micro privacy">
+                            WhatsApp akan dibuka dengan draf mesej. Anda memilih untuk menghantarnya. Maklumat tidak
+                            disimpan di laman ini.
+                        </p>
+                    </form>
+                    <div class="direct-registration">
+                        <details>
+                            <summary>
+                                Sudah bersedia untuk mendaftar?
+                            </summary>
+                            <p>
+                                Pautan asal menggunakan nama “okt-2026”. Sahkan dengan Sir Zul bahawa borang ini
+                                menerima permohonan November.
+                            </p>
+                            <a class="text-link" href="https://vis-tuaran-intake-okt-2026.netlify.app/" rel="noopener"
+                                target="_blank">
+                                Buka borang pendaftaran asal
+                                <span aria-hidden="true">
+                                    <svg aria-hidden="true" class="arrow-icon" viewbox="0 0 24 24">
+                                        <path d="M6 18 18 6M6 6h12v12">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </a>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--
+12. FOOTER — UBAH DI SINI: maklumat kolej dan kredit.
+-->
+    <footer>
+        <div class="container footer-top">
+            <a class="logo" href="#utama">
+                <b>
+                    VIS
+                    <span>
+                        ●
+                    </span>
+                </b>
+                <span>
+                    KOLEJ VIS
+                    <br />
+                    <strong>
+                        MECHATRONIC
+                    </strong>
+                </span>
+            </a>
+            <p>
+                Kemahiran bermula di sini.
+                <br />
+                <strong>
+                    Tuaran, Sabah.
+                </strong>
+            </p>
+            <a class="footer-contact" href="https://wa.me/60199254842">
+                Hubungi Sir Zul
+                <span aria-hidden="true">
+                    <svg aria-hidden="true" class="arrow-icon" viewbox="0 0 24 24">
+                        <path d="M6 18 18 6M6 6h12v12">
+                        </path>
+                    </svg>
+                </span>
+                <small>
+                    019-925 4842
+                </small>
+            </a>
+        </div>
+        <div class="container footer-bottom">
+            <span>
+                © 2026 Kolej VIS Mechatronic
+            </span>
+            <span>
+                Designed &amp; Developed by zhlmi.ijt
+            </span>
+            <span>
+                Foto ilustrasi: Unsplash
+            </span>
+        </div>
+    </footer>
+    <!--
+13. BUTANG TETAP — hanya muncul pada skrin telefon.
+-->
+    <div class="mobile-action">
+        <div>
+            <strong>
+                Pengambilan November
+            </strong>
+            <span>
+                SKM Tahap 3 · Tuaran
+            </span>
+        </div>
+        <a class="button primary" href="#mohon">
+            Semak kelayakan
+            <span aria-hidden="true">
+                <svg aria-hidden="true" class="arrow-icon" viewbox="0 0 24 24">
+                    <path d="M6 18 18 6M6 6h12v12">
+                    </path>
+                </svg>
+            </span>
+        </a>
+    </div>
+    <script>
+        /*
+        BAHAGIAN D — JAVASCRIPT (INTERAKSI)
+        ==================================
+        Kod ini diletakkan di penghujung body, supaya elemen HTML sudah tersedia.
+        const = pemboleh ubah yang tidak ditetapkan semula.
+        function = kumpulan arahan yang boleh dipanggil berulang kali.
+        addEventListener = jalankan arahan apabila sesuatu berlaku, seperti klik.
+        textContent = tukar teks dalam elemen HTML dengan selamat.
+        */
+
+        'use strict';
+
+        // D1. MAKLUMAT MUDAH DIUBAH
+        // UBAH DI SINI: nombor antarabangsa tanpa tanda +, ruang atau sengkang.
+        // Jika menukar nombor, cari juga nombor lama dalam pautan HTML di atas.
+        const nomborWhatsApp = '60199254842';
+        const pengambilan = 'November 2026';
+        const namaKolej = 'Kolej VIS Mechatronic, Tuaran';
+        // Jika bulan/tahun berubah, kemas kini teks pengambilan dalam HTML juga.
+
+        // D2. MENU TELEFON
+        const butangMenu = document.querySelector('.menu');
+        const menuNavigasi = document.getElementById('navigation');
+
+        function tutupMenu() {
+            butangMenu.setAttribute('aria-expanded', 'false');
+            butangMenu.setAttribute('aria-label', 'Buka menu');
+            menuNavigasi.classList.remove('open');
+        }
+
+        function tukarMenu() {
+            const sedangTerbuka = butangMenu.getAttribute('aria-expanded') === 'true';
+            if (sedangTerbuka) {
+                tutupMenu();
+            } else {
+                butangMenu.setAttribute('aria-expanded', 'true');
+                butangMenu.setAttribute('aria-label', 'Tutup menu');
+                menuNavigasi.classList.add('open');
+            }
+        }
+
+        butangMenu.addEventListener('click', tukarMenu);
+
+        // Tutup menu selepas pengunjung memilih pautan.
+        menuNavigasi.querySelectorAll('a').forEach(function (pautan) {
+            pautan.addEventListener('click', tutupMenu);
+        });
+
+        // Pengguna papan kekunci boleh menutup menu dengan Escape.
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && butangMenu.getAttribute('aria-expanded') === 'true') {
+                tutupMenu();
+                butangMenu.focus();
+            }
+        });
+
+        // D3. PILIHAN MINAT
+        // UBAH DI SINI: penerangan yang muncul apabila butang minat ditekan.
+        // Nama repair/code/design/robot sepadan dengan data-interest dalam HTML.
+        const peneranganMinat = {
+            repair: 'Minat mencari punca kerosakan? Terokai kemahiran pengujian komponen dan penyelenggaraan sistem.',
+            code: 'Suka komputer dan logik? Terokai bagaimana arahan program membantu mesin bertindak berdasarkan bacaan sensor.',
+            design: 'Suka melukis dan mereka? Kenali CAD untuk menggambarkan bentuk, ukuran dan pemasangan sesuatu komponen.',
+            robot: 'Tertarik dengan robot? Fahami gabungan mekanikal, motor, sensor dan program yang membolehkan mesin bergerak.'
+        };
+
+        const semuaButangMinat = document.querySelectorAll('[data-interest]');
+        const teksMinat = document.getElementById('interest-result');
+
+        semuaButangMinat.forEach(function (butang) {
+            butang.addEventListener('click', function () {
+                // Nyahpilih butang lain, kemudian aktifkan butang yang ditekan.
+                semuaButangMinat.forEach(function (butangLain) {
+                    butangLain.setAttribute('aria-pressed', 'false');
+                });
+                butang.setAttribute('aria-pressed', 'true');
+
+                const pilihan = butang.dataset.interest;
+                teksMinat.textContent = peneranganMinat[pilihan];
+            });
+        });
+
+        // D4. PILIHAN KERJAYA
+        // UBAH DI SINI: data untuk setiap kad kerjaya.
+        const maklumatKerjaya = {
+            maintenance: {
+                sector: 'PENYELENGGARAAN / SERVIS',
+                title: 'Pastikan mesin terus berfungsi.',
+                description: 'Membuat pemeriksaan, mengenal pasti kerosakan dan membantu menyelenggara mesin dalam pasukan teknikal.',
+                skills: 'Pemeriksaan komponen · Troubleshooting · Dokumentasi kerja'
+            },
+            automation: {
+                sector: 'AUTOMASI / KAWALAN',
+                title: 'Bantu sistem bekerja secara automatik.',
+                description: 'Menyokong pemasangan, pengujian dan penyelenggaraan sensor, peralatan kawalan serta mesin automatik.',
+                skills: 'Logik kawalan · Sensor · Pengujian sistem'
+            },
+            electronics: {
+                sector: 'ELEKTRONIK / PENGUJIAN',
+                title: 'Kenali apa yang berlaku di dalam litar.',
+                description: 'Membantu memasang, menguji dan mengesan masalah pada komponen serta peralatan elektronik.',
+                skills: 'Bacaan litar · Alat pengukuran · Pengujian komponen'
+            },
+            production: {
+                sector: 'PENGELUARAN / OPERASI',
+                title: 'Sokong kelancaran proses pengeluaran.',
+                description: 'Membantu operasi mesin dan proses pengeluaran, membuat pemeriksaan asas serta melaporkan masalah kepada pasukan.',
+                skills: 'Operasi peralatan · Pemeriksaan asas · Prosedur kerja'
+            }
+        };
+
+        const semuaButangKerjaya = document.querySelectorAll('[data-career]');
+
+        semuaButangKerjaya.forEach(function (butang) {
+            butang.addEventListener('click', function () {
+                semuaButangKerjaya.forEach(function (butangLain) {
+                    butangLain.setAttribute('aria-pressed', 'false');
+                });
+                butang.setAttribute('aria-pressed', 'true');
+
+                const pilihan = butang.dataset.career;
+                const kerjaya = maklumatKerjaya[pilihan];
+
+                document.getElementById('career-sector').textContent = kerjaya.sector;
+                document.getElementById('career-title').textContent = kerjaya.title;
+                document.getElementById('career-description').textContent = kerjaya.description;
+                document.getElementById('career-skills').textContent = kerjaya.skills;
+            });
+        });
+
+        // D5. SIMULASI CONVEYOR
+        // class 'running' menggerakkan kotak menggunakan CSS.
+        // setTimeout menunggu masa tertentu. 1000 milisaat = 1 saat.
+        const kotakDemo = document.getElementById('demo');
+        const butangDemo = document.getElementById('run-demo');
+        const statusDemo = document.getElementById('demo-status');
+
+        function jalankanDemo() {
+            butangDemo.disabled = true;
+            kotakDemo.classList.remove('running');
+            statusDemo.textContent = 'Motor menggerakkan objek ke arah sensor.';
+
+            window.setTimeout(function () {
+                kotakDemo.classList.add('running');
+            }, 100);
+
+            window.setTimeout(function () {
+                statusDemo.textContent = 'Sensor mengesan objek. Program memproses isyarat dan motor meneruskan pergerakan.';
+            }, 1150);
+
+            window.setTimeout(function () {
+                butangDemo.disabled = false;
+                butangDemo.textContent = 'Ulang simulasi';
+            }, 1850);
+        }
+
+        butangDemo.addEventListener('click', jalankanDemo);
+
+        // D6. BORANG WHATSAPP
+        // Borang ini tidak menyimpan data atau menghantar mesej secara automatik.
+        const borang = document.getElementById('enquiry');
+
+        function bukaWhatsApp(event) {
+            // Halang borang daripada menghantar data/reload seperti borang biasa.
+            event.preventDefault();
+
+            // Ambil maklumat daripada medan HTML.
+            const nama = document.getElementById('name').value.trim();
+            const peranan = document.querySelector('input[name="role"]:checked').value;
+            const topik = document.getElementById('topic').value;
+
+            // Nama ialah pilihan. Borang masih berfungsi jika nama dikosongkan.
+            let pengenalan = 'saya ' + peranan.toLowerCase();
+            if (nama !== '') {
+                pengenalan = 'saya ' + nama + ', ' + peranan.toLowerCase();
+            }
+
+            // UBAH DI SINI: susunan ayat yang muncul sebagai draf WhatsApp.
+            const mesej = 'Salam Sir Zul, ' + pengenalan + '. ' +
+                'Saya berminat dengan pengambilan ' + pengambilan + ' ' +
+                namaKolej + '. Boleh bantu saya semak ' + topik + '?';
+
+            // encodeURIComponent menukar ruang dan simbol supaya selamat dalam URL.
+            const pautan = 'https://wa.me/' + nomborWhatsApp +
+                '?text=' + encodeURIComponent(mesej);
+
+            window.location.assign(pautan);
+        }
+
+        borang.addEventListener('submit', bukaWhatsApp);
+    </script>
+</body>
+
+</html>
