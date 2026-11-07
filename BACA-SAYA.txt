@@ -1,0 +1,8 @@
+CARA PASANG
+1. Extract ZIP ini.
+2. Gantikan index.html lama dengan fail index.html ini.
+3. Letakkan folder videos di sebelah index.html.
+4. Kekalkan folder images sedia ada. Gambar lama tidak disertakan dalam ZIP ini.
+5. Upload index.html dan folder videos ke GitHub.
+
+Video animasi 36 saat, Bahasa Melayu, tanpa suara. Untuk tukar video, ganti videos/apa-itu-mekatronik.mp4.

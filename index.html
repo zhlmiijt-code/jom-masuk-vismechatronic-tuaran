@@ -31,14 +31,14 @@ TIP MUDAH
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>
-        Belajar Mekatronik di Tuaran | Kolej VIS — November 2026
+        Belajar Mekatronik di Tuaran | Kolej VIS — Januari 2027
     </title>
     <meta
-        content="Bina kemahiran teknikal bersama Kolej VIS Mechatronic, Tuaran. SKM Tahap 3, 18 bulan dan 70% amali. Semak kelayakan pengambilan November 2026 dengan Sir Zul."
+        content="Bina kemahiran teknikal bersama Kolej VIS Mechatronic, Tuaran. SKM Tahap 3, 18 bulan dan 70% amali. Semak kelayakan pengambilan Januari 2027 dengan Sir Zul."
         name="description" />
     <meta content="#142b35" name="theme-color" />
     <meta content="Minat teknikal? Bina masa depan dengan mekatronik." property="og:title" />
-    <meta content="Pengambilan November 2026 • Kolej VIS, Tuaran Sabah • SKM Tahap 3 • 70% Amali • 18 bulan"
+    <meta content="Pengambilan Januari 2027 • Kolej VIS, Tuaran Sabah • SKM Tahap 3 • 70% Amali • 18 bulan"
         property="og:description" />
     <style>
         /*
@@ -2758,6 +2758,573 @@ TIP MUDAH
                 font-size: 8px
             }
         }
+
+        /* TAMBAHAN: program, fasiliti dan PLC. CSS bahagian hero dikekalkan. */
+        .vis-example {
+            padding: 28px;
+            border-left: 4px solid #f5702c;
+            background: #eeefe8;
+            border-radius: 0 14px 14px 0;
+        }
+
+        .vis-example h3 {
+            margin: 12px 0;
+            font-size: 25px;
+        }
+
+        .vis-example p {
+            max-width: 850px;
+            line-height: 1.8;
+        }
+
+        .vis-flow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        .vis-flow span {
+            background: white;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .vis-subheading {
+            margin: 38px 0 22px;
+        }
+
+        .vis-subheading h3 {
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .vis-skills,
+        .vis-facilities {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .vis-skills article {
+            padding: 24px;
+            border: 1px solid #dce2dd;
+            border-radius: 12px;
+            background: white;
+        }
+
+        .vis-skills h3,
+        .vis-facility h3 {
+            margin: 12px 0 8px;
+            font-size: 20px;
+        }
+
+        .vis-skills p,
+        .vis-facility p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #526570;
+        }
+
+        .vis-facility {
+            border: 1px solid #dce2dd;
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .vis-photo {
+            aspect-ratio: 16/9;
+            position: relative;
+            background: #eaf0e9;
+        }
+
+        .vis-photo-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #526570;
+        }
+
+        .vis-photo-placeholder>span:first-child {
+            font-size: 30px;
+            color: #b84b18;
+        }
+
+        .vis-photo-placeholder small {
+            font-size: 12px;
+        }
+
+        .vis-photo img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .vis-photo img[hidden] {
+            display: none;
+        }
+
+        .vis-facility-copy {
+            padding: 12px 24px 24px;
+        }
+
+        .vis-plc {
+            min-width: 0;
+            padding: 24px;
+            background: #102831;
+            color: #f8f6f0;
+            border: 1px solid #44616a;
+            border-radius: 18px;
+        }
+
+        .vis-plc-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        .vis-plc-top span {
+            color: #f9a46d;
+        }
+
+        .vis-ladder {
+            color: #9aadb1;
+            background: #0b2028;
+            margin: 24px 0;
+            border-radius: 10px;
+        }
+
+        .vis-ladder svg {
+            display: block;
+            width: 100%;
+        }
+
+        .vis-plc-controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            text-align: center;
+            align-items: center;
+        }
+
+        .vis-plc-controls small {
+            display: block;
+            margin-top: 16px;
+            font-family: monospace;
+        }
+
+        #plc-button {
+            min-height: 76px;
+            width: 100%;
+            border: 2px solid #ffb98d;
+            background: #f5702c;
+            color: #102831;
+            border-radius: 12px;
+            font: inherit;
+            font-size: 13px;
+            font-weight: 800;
+            cursor: pointer;
+            touch-action: none;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+        }
+
+        #plc-button:focus-visible {
+            outline: 3px solid white;
+            outline-offset: 5px;
+        }
+
+        .vis-bulb {
+            width: 80px;
+            height: 80px;
+            padding: 12px;
+            margin: auto;
+            border: 2px solid #70868c;
+            border-radius: 50%;
+            background: #243c44;
+            color: #91a5ab;
+        }
+
+        .vis-bulb svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .vis-plc.is-on .vis-bulb {
+            color: #493300;
+            background: #ffe080;
+            border-color: #ffe080;
+            box-shadow: 0 0 34px #ffdf8066;
+        }
+
+        .vis-plc.is-on .vis-ladder {
+            color: #a9eabf;
+        }
+
+        .vis-plc.is-on #plc-button {
+            background: #e05c1b;
+            box-shadow: inset 0 3px 7px #78300c55;
+        }
+
+        #plc-status {
+            margin: 24px 0 10px;
+            min-height: 3em;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .vis-plc .micro {
+            color: #c0ced0;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 600px) {
+
+            .vis-skills,
+            .vis-facilities {
+                grid-template-columns: 1fr;
+            }
+
+            .vis-example,
+            .vis-plc {
+                padding: 20px;
+            }
+
+            .vis-example h3 {
+                font-size: 22px;
+            }
+        }
+
+        /* TAMBAHAN: senarai lengkap bidang pembelajaran dan sektor kerjaya. */
+        .vis-subject-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .vis-subject {
+            display: flex;
+            gap: 14px;
+            padding: 20px;
+            border: 1px solid #dce2dd;
+            border-radius: 12px;
+            background: #fff;
+            min-width: 0;
+        }
+
+        .vis-subject-number {
+            flex-shrink: 0;
+            color: #a84312;
+            font-size: 12px;
+            font-weight: 800;
+            padding-top: 3px;
+        }
+
+        .vis-subject h3 {
+            font-size: 17px;
+            line-height: 1.4;
+            margin: 0 0 8px;
+            color: #142e38;
+        }
+
+        .vis-subject p,
+        .vis-pathway p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #526570;
+            margin: 0;
+        }
+
+        .vis-pathway-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .vis-pathway {
+            padding: 22px;
+            border: 1px solid #dce2dd;
+            border-left: 3px solid #f5702c;
+            border-radius: 0 12px 12px 0;
+            background: #fff;
+            min-width: 0;
+        }
+
+        .vis-pathway-label {
+            display: block;
+            color: #a84312;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 1.6;
+        }
+
+        .vis-pathway h4 {
+            color: #142e38;
+            font-size: 18px;
+            line-height: 1.4;
+            margin: 9px 0;
+        }
+
+        @media (max-width: 1000px) {
+            .vis-subject-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .vis-subject-grid,
+            .vis-pathway-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .vis-subject,
+            .vis-pathway {
+                padding: 18px;
+            }
+        }
+
+        /* SENARAI BOLEH DIBUKA: semua gambar dan penerangan tertutup pada awalnya. */
+        .vis-subject-grid {
+            align-items: start;
+        }
+
+        .vis-subject-toggle {
+            border: 1px solid #dce2dd;
+            border-radius: 12px;
+            background: #fff;
+            overflow: hidden;
+            min-width: 0;
+        }
+
+        .vis-subject-toggle summary {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-height: 76px;
+            padding: 18px;
+            cursor: pointer;
+            list-style: none;
+            color: #142e38;
+        }
+
+        .vis-subject-toggle summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .vis-subject-toggle summary:hover {
+            background: #f6f5ef;
+        }
+
+        .vis-subject-toggle summary:focus-visible {
+            outline: 3px solid #b84b18;
+            outline-offset: -4px;
+        }
+
+        .vis-subject-title {
+            flex: 1;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        .vis-toggle-icon {
+            flex-shrink: 0;
+            font-size: 24px;
+            color: #a84312;
+            line-height: 1;
+        }
+
+        .vis-subject-toggle[open] {
+            border-color: #cf8b62;
+        }
+
+        .vis-subject-toggle[open] summary {
+            background: #fff4e9;
+        }
+
+        .vis-subject-toggle[open] .vis-toggle-icon {
+            transform: rotate(45deg);
+        }
+
+        .vis-subject-body {
+            padding: 0 18px 20px;
+        }
+
+        .vis-subject-photo {
+            position: relative;
+            aspect-ratio: 4 / 3;
+            margin-top: 18px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #eaf0e9;
+        }
+
+        .vis-subject-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 20px;
+            text-align: center;
+            color: #526570;
+        }
+
+        .vis-subject-placeholder span {
+            font-weight: 700;
+        }
+
+        .vis-subject-placeholder small {
+            font-size: 12px;
+        }
+
+        .vis-subject-photo img {
+            position: absolute;
+            inset: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .vis-subject-photo img[hidden] {
+            display: none;
+        }
+
+        .vis-subject-body p {
+            margin: 16px 0 0;
+            color: #526570;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* RUANG VIDEO PROGRAM — saiz ikut lebar skrin. */
+        .vis-video-section {
+            margin-top: 28px;
+            padding: 24px;
+            background: #fff;
+            border: 1px solid #dce2dd;
+            border-radius: 14px;
+        }
+
+        .vis-video-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+
+        .vis-video-heading h3 {
+            margin-top: 10px;
+            font-size: 25px;
+            line-height: 1.3;
+        }
+
+        .vis-video-heading p {
+            max-width: 420px;
+            color: #526570;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .vis-program-video {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #142e38;
+            border-radius: 10px;
+        }
+
+        .vis-video-section>.micro {
+            margin-top: 12px;
+        }
+
+        .vis-video-transcript {
+            margin-top: 18px;
+            border-top: 1px solid #dce2dd;
+            padding-top: 16px;
+        }
+
+        .vis-video-transcript summary {
+            cursor: pointer;
+            color: #a84312;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .vis-video-transcript p {
+            margin-top: 12px;
+            color: #526570;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        @media(max-width: 600px) {
+            .vis-video-section {
+                padding: 16px;
+            }
+
+            .vis-video-heading {
+                display: block;
+            }
+
+            .vis-video-heading p {
+                margin-top: 12px;
+            }
+        }
+
+        /* PENERANGAN MEKATRONIK: tajuk dan butang di luar, isi dibuka apabila ditekan. */
+        #program > .container { min-width: 0; }
+        #program .section-heading { margin-bottom: 24px; }
+        .mekatronik-info { margin-bottom: 32px; min-width: 0; }
+        .mekatronik-butang {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            max-width: 100%;
+            padding: 15px 20px;
+            background: #f5702c;
+            color: #142e38;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 1.5;
+            cursor: pointer;
+            list-style: none;
+        }
+        .mekatronik-butang::-webkit-details-marker { display: none; }
+        .mekatronik-butang:hover { background: #ed6420; }
+        .mekatronik-butang:focus-visible { outline: 3px solid #142e38; outline-offset: 4px; }
+        .mekatronik-simbol { flex-shrink: 0; font-size: 24px; line-height: 1; }
+        .mekatronik-butang .teks-tutup { display: none; }
+        .mekatronik-info[open] .teks-buka { display: none; }
+        .mekatronik-info[open] .teks-tutup { display: inline; }
+        .mekatronik-info[open] .mekatronik-simbol { transform: rotate(45deg); }
+        .mekatronik-kandungan { margin-top: 24px; min-width: 0; }
+        .mekatronik-intro { margin-bottom: 24px; color: #526570; line-height: 1.8; }
+        #program .vis-program-video { max-width: 100%; height: auto; }
+        @media (max-width: 600px) {
+            .mekatronik-butang { width: 100%; font-size: 14px; }
+            .mekatronik-butang > span { min-width: 0; }
+        }
     </style>
 </head>
 
@@ -2805,6 +3372,7 @@ TIP MUDAH
                 <a href="#program">
                     Program
                 </a>
+                <a href="#fasiliti">Fasiliti</a>
                 <a href="#kerjaya">
                     Peluang kerjaya
                 </a>
@@ -2849,9 +3417,7 @@ TIP MUDAH
                     <h1>
                         Minat teknikal?
                         <br />
-                        Bina masa depan
-                        <br />
-                        dengan
+                        Bah, jom belajar
                         <em>
                             <p style="
                             font-size: 46px;
@@ -2861,17 +3427,53 @@ TIP MUDAH
                         </em>
                     </h1>
                     <p class="lead">
-                        Kuasai kemahiran praktikal dan bina langkah ke alam pekerjaan bersama
+                        Kuasai kemahiran praktikal dan mulakan langkah ke dunia pekerjaan bersama , Tuaran.
                         <strong>
                             Kolej VIS Mechatronic, Tuaran.
                         </strong>
                     </p>
+                    <!-- SKM TAHAP 3 -->
                     <div class="programme-label">
+                        <span>SKM TAHAP 3</span>
+
                         <span>
-                            SKM TAHAP 3
+                            Pemasangan Sistem Kejuruteraan Automasi Industri
+                            <br>
+                            <strong>
+                                <small>Kod NOSS: MC-091-3:2016</small>
+                            </strong>
+                            <br>
+
+                            <!-- Pautan semakan NOSS rasmi -->
+                            <a href="https://www.myspike.my/index.php?r=umum-noss%2Findex-noss&amp;NossinfoSearch%5Bnosscode%5D=MC-091-3%3A2016"
+                                target="_blank" rel="noopener noreferrer"
+                                style="font-size: 12px; color: #a84312; text-decoration: underline;">
+                                Semak NOSS di MySPIKE (JPK) ↗
+                            </a>
                         </span>
+                    </div>
+
+                    <!-- DKM TAHAP 4 -->
+                    <div class="programme-label" style="margin-top: 14px;">
+                        <span>DKM TAHAP 4</span>
+
                         <span>
-                            Kejuruteraan Teknologi Mekatronik
+                            Sokongan Sistem Kejuruteraan Automasi Industri
+                            <br>
+                            <strong>
+                                <small>
+                                    Kod NOSS: MC-091-4:2016
+                                    · <b style="color: #b84b18;">Akan Dibuka</b>
+                                </small>
+                            </strong>
+                            <br>
+
+                            <!-- Pautan semakan NOSS rasmi -->
+                            <a href="https://www.myspike.my/index.php?r=umum-noss%2Findex-noss&amp;NossinfoSearch%5Bnosscode%5D=MC-091-4%3A2016"
+                                target="_blank" rel="noopener noreferrer"
+                                style="font-size: 12px; color: #a84312; text-decoration: underline;">
+                                Semak NOSS di MySPIKE (JPK) ↗
+                            </a>
                         </span>
                     </div>
                     <div class="hero-actions">
@@ -2894,15 +3496,15 @@ TIP MUDAH
                     <p class="micro hero-micro">
                         Tiada syarat sijil akademik*
                         <span>
-                            ·
+                            /
                         </span>
                         Menguasai asas 3M <strong>(Membaca, Menulis dan Mengira)</strong>
                         <span>
-                            ·
+                            /
                         </span>
                         Umur 15–30 tahun
                         <span>
-                            ·
+                            /
                         </span>
                         Tempoh pengajian 18 bulan
                     </p>
@@ -2983,7 +3585,7 @@ TIP MUDAH
                 </div>
                 <!-- GAMBAR 3: PEMBELAJARAN PELAJAR -->
                 <div class="kelebihan-kad">
-                    <img src="images/pembelajaran.jpg" alt="Suasana pembelajaran pelajar" class="kelebihan-gambar">
+                    <img src="images/pembelajaran.png" alt="Suasana pembelajaran pelajar" class="kelebihan-gambar">
 
                     <div class="kelebihan-teks">
                         <strong>1 Tahun 6 Bulan (18 Bulan)</strong>
@@ -3006,255 +3608,503 @@ TIP MUDAH
         <!--
 05. PROGRAM DAN PILIHAN MINAT — teks dalam butang dikawal JavaScript.
 -->
+        <!-- KENALI PROGRAM: penerangan dahulu, kemudian contoh dan kemahiran. -->
         <section class="section" id="program">
+            <div class="container">
+                <!-- TAJUK DI LUAR -->
+                <div class="section-heading">
+                    <div>
+                        <div class="eyebrow">01 / KENALI PROGRAM</div>
+                        <h2>Apa itu <em>mekatronik?</em></h2>
+                    </div>
+                </div>
+
+                <!-- BUTANG DAN KANDUNGAN TERSEMBUNYI -->
+                <details class="mekatronik-info" id="mekatronik-info">
+
+                    <summary class="mekatronik-butang">
+                        <span class="teks-buka">Kenali mekatronik &amp; lihat video</span>
+                        <span class="teks-tutup">Tutup penerangan</span>
+                        <span class="mekatronik-simbol" aria-hidden="true">+</span>
+                    </summary>
+
+                    <div class="mekatronik-kandungan">
+
+                        <p class="mekatronik-intro">
+                            Senang cerita, mekatronik menggabungkan
+                            <strong>mekanikal, elektrik, elektronik dan pengaturcaraan</strong>
+                            supaya mesin boleh bergerak dan bekerja secara automatik.
+                        </p>
+
+                        <!-- CONTOH MUDAH -->
+                        <div class="vis-example">
+                            <span class="eyebrow">
+                                DI RUMAH PUN SEBENARNYA ADA MEKATRONIK
+                            </span>
+
+                            <h3>
+                                Tekan satu butang, macam mana mesin basuh
+                                tahu apa perlu dibuat?
+                            </h3>
+
+                            <p>
+                                Kamu masukkan pakaian, pilih program dan tekan
+                                <strong>Start</strong>. Mesin akan mengisi air,
+                                membasuh, membilas dan memerah pakaian
+                                mengikut urutan yang ditetapkan.
+                            </p>
+
+                            <p>
+                                <strong>Sensor jadi “deria”</strong> — mengesan
+                                paras air supaya pengawal tahu bila air sudah cukup.
+                            </p>
+
+                            <p>
+                                <strong>Pengawal jadi “otak”</strong> — ikut program
+                                untuk mengatur proses mengisi air, membasuh,
+                                membilas dan memerah.
+                            </p>
+
+                            <p>
+                                <strong>Motor menghasilkan gerakan</strong> —
+                                memutarkan drum yang menempatkan pakaian.
+                            </p>
+
+                            <div class="vis-flow">
+                                <span>01 · Sensor mengesan</span>
+                                <span>02 · Pengawal mengatur</span>
+                                <span>03 · Motor menggerakkan</span>
+                            </div>
+
+                            <p style="margin-top: 20px;">
+                                Semua bahagian ini bekerja bersama.
+                                <strong>Inilah contoh mekatronik dalam kehidupan harian.</strong>
+                            </p>
+                        </div>
+
+                        <!-- VIDEO CONTOH -->
+                        <div class="vis-video-section">
+                            <div class="vis-video-heading">
+                                <div>
+                                    <span class="eyebrow">TENGOK CONTOHNYA</span>
+                                    <h3>Macam mana semua ini bekerja?</h3>
+                                </div>
+                            </div>
+
+                            <!-- Tukar src jika nama fail video berbeza -->
+                            <video class="vis-program-video" controls playsinline preload="none"
+                                aria-label="Video penerangan mekatronik melalui mesin basuh">
+                                <source src="videos/apa-itu-mekatronik.mp4" type="video/mp4">
+                                Pelayar kamu tidak menyokong video ini.
+                            </video>
+
+                            <p class="micro" style="margin-top: 12px;">
+                                Tekan butang main untuk menonton video.
+                            </p>
+                        </div>
+
+                    </div>
+                </details>
+
+                <div class="vis-subheading">
+                    <h3>Apa yang kamu akan belajar?</h3>
+                    <p>Tekan tajuk untuk lihat gambar dan penerangan. Tekan sekali lagi untuk tutup.</p>
+                </div>
+                <!-- BIDANG PEMBELAJARAN: setiap details ialah satu poin. Tukar src untuk gambar sendiri. -->
+                <div class="vis-subject-grid">
+                    <!-- GAMBAR 01: simpan sebagai images/belajar/electrical.jpg -->
+                    <details class="vis-subject-toggle" name="bidang-pembelajaran">
+                        <summary>
+                            <span class="vis-subject-number" aria-hidden="true">01</span>
+                            <span class="vis-subject-title">Electrical</span>
+                            <span class="vis-toggle-icon" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="vis-subject-body">
+                            <div class="vis-subject-photo">
+                                <div class="vis-subject-placeholder"><span>Electrical</span><small>Gambar akan dikemas
+                                        kini</small></div>
+                                <img src="images/pembelajaran/electrical.png" alt="Pembelajaran Electrical" loading="lazy"
+                                    onerror="this.hidden=true">
+                            </div>
+                            <p>Asas elektrik, pendawaian dan sambungan litar.</p>
+                        </div>
+                    </details>
+                    <!-- GAMBAR 02: simpan sebagai images/belajar/electronics.jpg -->
+                    <details class="vis-subject-toggle" name="bidang-pembelajaran">
+                        <summary>
+                            <span class="vis-subject-number" aria-hidden="true">02</span>
+                            <span class="vis-subject-title">Electronics</span>
+                            <span class="vis-toggle-icon" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="vis-subject-body">
+                            <div class="vis-subject-photo">
+                                <div class="vis-subject-placeholder"><span>Electronics</span><small>Gambar akan dikemas
+                                        kini</small></div>
+                                <img src="images/pembelajaran/electronic.png" alt="Pembelajaran Electronics" loading="lazy"
+                                    onerror="this.hidden=true">
+                            </div>
+                            <p>Kenali komponen elektronik, sensor dan cara menguji litar.</p>
+                        </div>
+                    </details>
+                    <!-- GAMBAR 03: simpan sebagai images/belajar/plc-programming.jpg -->
+                    <details class="vis-subject-toggle" name="bidang-pembelajaran">
+                        <summary>
+                            <span class="vis-subject-number" aria-hidden="true">03</span>
+                            <span class="vis-subject-title">PLC Programming</span>
+                            <span class="vis-toggle-icon" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="vis-subject-body">
+                            <div class="vis-subject-photo">
+                                <div class="vis-subject-placeholder"><span>PLC Programming</span><small>Gambar akan
+                                        dikemas kini</small></div>
+                                <img src="images/pembelajaran/plc.png" alt="Pembelajaran PLC Programming" loading="lazy"
+                                    onerror="this.hidden=true">
+                            </div>
+                            <p>Bina arahan untuk mengawal mesin dan proses automatik.</p>
+                        </div>
+                    </details>
+                    <!-- GAMBAR 04: simpan sebagai images/belajar/hmi.jpg -->
+                    <details class="vis-subject-toggle" name="bidang-pembelajaran">
+                        <summary>
+                            <span class="vis-subject-number" aria-hidden="true">04</span>
+                            <span class="vis-subject-title">HMI</span>
+                            <span class="vis-toggle-icon" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="vis-subject-body">
+                            <div class="vis-subject-photo">
+                                <div class="vis-subject-placeholder"><span>HMI</span><small>Gambar akan dikemas
+                                        kini</small></div>
+                                <img src="images/pembelajaran/hmi.png" alt="Pembelajaran HMI" loading="lazy"
+                                    onerror="this.hidden=true">
+                            </div>
+                            <p>Kenali skrin untuk memantau status dan mengawal mesin.</p>
+                        </div>
+                    </details>
+                    <!-- GAMBAR 05: simpan sebagai images/belajar/pneumatics.jpg -->
+                    <details class="vis-subject-toggle" name="bidang-pembelajaran">
+                        <summary>
+                            <span class="vis-subject-number" aria-hidden="true">05</span>
+                            <span class="vis-subject-title">Pneumatics</span>
+                            <span class="vis-toggle-icon" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="vis-subject-body">
+                            <div class="vis-subject-photo">
+                                <div class="vis-subject-placeholder"><span>Pneumatics</span><small>Gambar akan dikemas
+                                        kini</small></div>
+                                <img src="images/pembelajaran/pneumatic.png" alt="Pembelajaran Pneumatics" loading="lazy"
+                                    onerror="this.hidden=true">
+                            </div>
+                            <p>Fahami bagaimana udara termampat menggerakkan silinder.</p>
+                        </div>
+                    </details>
+                    <!-- GAMBAR 06: simpan sebagai images/belajar/hydraulics.jpg -->
+                    <details class="vis-subject-toggle" name="bidang-pembelajaran">
+                        <summary>
+                            <span class="vis-subject-number" aria-hidden="true">06</span>
+                            <span class="vis-subject-title">Hydraulics</span>
+                            <span class="vis-toggle-icon" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="vis-subject-body">
+                            <div class="vis-subject-photo">
+                                <div class="vis-subject-placeholder"><span>Hydraulics</span><small>Gambar akan dikemas
+                                        kini</small></div>
+                                <img src="images/pembelajaran/hydraulic.png" alt="Pembelajaran Hydraulics" loading="lazy"
+                                    onerror="this.hidden=true">
+                            </div>
+                            <p>Kenali sistem yang menggunakan tekanan bendalir untuk menghasilkan gerakan.</p>
+                        </div>
+                    </details>
+                    <!-- GAMBAR 07: simpan sebagai images/belajar/motor-control.jpg -->
+                    <details class="vis-subject-toggle" name="bidang-pembelajaran">
+                        <summary>
+                            <span class="vis-subject-number" aria-hidden="true">07</span>
+                            <span class="vis-subject-title">Motor Control</span>
+                            <span class="vis-toggle-icon" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="vis-subject-body">
+                            <div class="vis-subject-photo">
+                                <div class="vis-subject-placeholder"><span>Motor Control</span><small>Gambar akan
+                                        dikemas kini</small></div>
+                                <img src="images/pembelajaran/motorcontrol.png" alt="Pembelajaran Motor Control"
+                                    loading="lazy" onerror="this.hidden=true">
+                            </div>
+                            <p>Belajar asas menghidupkan, menghentikan dan mengawal motor.</p>
+                        </div>
+                    </details>
+                    <!-- GAMBAR 08: simpan sebagai images/belajar/inverter.jpg -->
+                    <details class="vis-subject-toggle" name="bidang-pembelajaran">
+                        <summary>
+                            <span class="vis-subject-number" aria-hidden="true">08</span>
+                            <span class="vis-subject-title">Inverter</span>
+                            <span class="vis-toggle-icon" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="vis-subject-body">
+                            <div class="vis-subject-photo">
+                                <div class="vis-subject-placeholder"><span>Inverter</span><small>Gambar akan dikemas
+                                        kini</small></div>
+                                <img src="images/pembelajaran/inverter.png" alt="Pembelajaran Inverter" loading="lazy"
+                                    onerror="this.hidden=true">
+                            </div>
+                            <p>Kenali kawalan kelajuan motor menggunakan pemacu frekuensi berubah (VFD).</p>
+                        </div>
+                    </details>
+                    <!-- GAMBAR 09: simpan sebagai images/belajar/servo.jpg -->
+                    <details class="vis-subject-toggle" name="bidang-pembelajaran">
+                        <summary>
+                            <span class="vis-subject-number" aria-hidden="true">09</span>
+                            <span class="vis-subject-title">Servo</span>
+                            <span class="vis-toggle-icon" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="vis-subject-body">
+                            <div class="vis-subject-photo">
+                                <div class="vis-subject-placeholder"><span>Servo</span><small>Gambar akan dikemas
+                                        kini</small></div>
+                                <img src="images/pembelajaran/servo.png" alt="Pembelajaran Servo" loading="lazy"
+                                    onerror="this.hidden=true">
+                            </div>
+                            <p>Terokai kawalan kedudukan dan pergerakan motor yang tepat.</p>
+                        </div>
+                    </details>
+                    <!-- GAMBAR 10: simpan sebagai images/belajar/robotics.jpg -->
+                    <details class="vis-subject-toggle" name="bidang-pembelajaran">
+                        <summary>
+                            <span class="vis-subject-number" aria-hidden="true">10</span>
+                            <span class="vis-subject-title">Robotics</span>
+                            <span class="vis-toggle-icon" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="vis-subject-body">
+                            <div class="vis-subject-photo">
+                                <div class="vis-subject-placeholder"><span>Robotics</span><small>Gambar akan dikemas
+                                        kini</small></div>
+                                <img src="images/pembelajaran/robotic.png" alt="Pembelajaran Robotics" loading="lazy"
+                                    onerror="this.hidden=true">
+                            </div>
+                            <p>Kenali pergerakan robot dan penggunaannya dalam automasi.</p>
+                        </div>
+                    </details>
+                    <!-- GAMBAR 11: simpan sebagai images/belajar/arduino.jpg -->
+                    <details class="vis-subject-toggle" name="bidang-pembelajaran">
+                        <summary>
+                            <span class="vis-subject-number" aria-hidden="true">11</span>
+                            <span class="vis-subject-title">Arduino</span>
+                            <span class="vis-toggle-icon" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="vis-subject-body">
+                            <div class="vis-subject-photo">
+                                <div class="vis-subject-placeholder"><span>Arduino</span><small>Gambar akan dikemas
+                                        kini</small></div>
+                                <img src="images/pembelajaran/arduino.png" alt="Pembelajaran Arduino" loading="lazy"
+                                    onerror="this.hidden=true">
+                            </div>
+                            <p>Cuba pengaturcaraan asas dengan sensor, input dan output.</p>
+                        </div>
+                    </details>
+                    <!-- GAMBAR 12: simpan sebagai images/belajar/autocad-solidworks.jpg -->
+                    <details class="vis-subject-toggle" name="bidang-pembelajaran">
+                        <summary>
+                            <span class="vis-subject-number" aria-hidden="true">12</span>
+                            <span class="vis-subject-title">AutoCAD &amp; SolidWorks</span>
+                            <span class="vis-toggle-icon" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="vis-subject-body">
+                            <div class="vis-subject-photo">
+                                <div class="vis-subject-placeholder"><span>AutoCAD &amp; SolidWorks</span><small>Gambar
+                                        akan dikemas kini</small></div>
+                                <img src="images/pembelajaran/cadd.png" alt="Pembelajaran AutoCAD &amp; SolidWorks"
+                                    loading="lazy" onerror="this.hidden=true">
+                            </div>
+                            <p>Kenali lukisan teknikal 2D dan reka bentuk model 3D.</p>
+                        </div>
+                    </details>
+                    <!-- GAMBAR 13: simpan sebagai images/belajar/industrial-networking-iiot.jpg -->
+                    <details class="vis-subject-toggle" name="bidang-pembelajaran">
+                        <summary>
+                            <span class="vis-subject-number" aria-hidden="true">13</span>
+                            <span class="vis-subject-title">Industrial Networking &amp; IIoT</span>
+                            <span class="vis-toggle-icon" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="vis-subject-body">
+                            <div class="vis-subject-photo">
+                                <div class="vis-subject-placeholder"><span>Industrial Networking &amp;
+                                        IIoT</span><small>Gambar akan dikemas kini</small></div>
+                                <img src="images/pembelajaran/iot.png" alt="Pembelajaran Industrial Networking &amp; IIoT"
+                                    loading="lazy" onerror="this.hidden=true">
+                            </div>
+                            <p>Fahami cara mesin dan sensor berhubung serta berkongsi data.</p>
+                        </div>
+                    </details>
+                    <!-- GAMBAR 14: simpan sebagai images/belajar/welding.jpg -->
+                    <details class="vis-subject-toggle" name="bidang-pembelajaran">
+                        <summary>
+                            <span class="vis-subject-number" aria-hidden="true">14</span>
+                            <span class="vis-subject-title">Welding</span>
+                            <span class="vis-toggle-icon" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="vis-subject-body">
+                            <div class="vis-subject-photo">
+                                <div class="vis-subject-placeholder"><span>Welding</span><small>Gambar akan dikemas
+                                        kini</small></div>
+                                <img src="images/pembelajaran/welding.png" alt="Pembelajaran Welding" loading="lazy"
+                                    onerror="this.hidden=true">
+                            </div>
+                            <p>Kenali asas penyambungan logam dan keselamatan kerja kimpalan.</p>
+                        </div>
+                    </details>
+                    <!-- GAMBAR 15: simpan sebagai images/belajar/mechanical.jpg -->
+                    <details class="vis-subject-toggle" name="bidang-pembelajaran">
+                        <summary>
+                            <span class="vis-subject-number" aria-hidden="true">15</span>
+                            <span class="vis-subject-title">Mechanical</span>
+                            <span class="vis-toggle-icon" aria-hidden="true">+</span>
+                        </summary>
+                        <div class="vis-subject-body">
+                            <div class="vis-subject-photo">
+                                <div class="vis-subject-placeholder"><span>Mechanical</span><small>Gambar akan dikemas
+                                        kini</small></div>
+                                <img src="images/pembelajaran/mechanical.png" alt="Pembelajaran Mechanical" loading="lazy"
+                                    onerror="this.hidden=true">
+                            </div>
+                            <p>Fahami komponen mekanikal, pemasangan dan pergerakan mesin.</p>
+                        </div>
+                    </details>
+                </div>
+                <p class="micro asset-note">Topik dan peralatan latihan mengikut modul program yang ditawarkan. Tanya
+                    pihak kolej untuk kandungan penuh.</p>
+            </div>
+        </section>
+
+        <!-- PLC ASAS: input I0.0 mengawal output Q0.0 tanpa litar latch. -->
+        <section class="future section" id="plc">
+            <div class="container future-grid">
+                <div>
+                    <div class="eyebrow">02 / CUBA SENDIRI</div>
+                    <h2>Tekan butang.<br><em>Lampu menyala.</em></h2>
+                    <p>
+                        Mesin basuh tadi menjalankan beberapa langkah secara automatik.
+                        Sekarang, kita cuba satu arahan yang mudah menggunakan simulasi PLC:
+                        tekan dan tahan butang untuk nyalakan lampu,
+                        kemudian lepaskan untuk padam.
+                    </p>
+                    <div class="future-tags"><span>Input · I0.0</span><span>Program · Ladder</span><span>Output ·
+                            Q0.0</span></div>
+                    <p class="micro">Ini simulasi pembelajaran dalam laman web. Lampu kekal menyala hanya semasa butang
+                        ditahan; tiada fungsi latch atau ingatan.</p>
+                </div>
+                <div class="vis-plc" id="plc-demo">
+                    <div class="vis-plc-top"><strong>PLC / KAWALAN LAMPU</strong><span>DEMO ASAS</span></div>
+                    <div class="vis-ladder" role="img"
+                        aria-label="Ladder: satu contact normally open I0.0 disambungkan kepada coil output Q0.0.">
+                        <svg viewBox="0 0 420 150" aria-hidden="true">
+                            <g fill="none" stroke="currentColor" stroke-width="3">
+                                <path
+                                    d="M25 25V125 M395 25V125 M25 80H125 M145 80H285 M325 80H395 M125 57V103 M145 57V103" />
+                                <path d="M295 58Q272 80 295 102 M315 58Q338 80 315 102" />
+                            </g>
+                            <g fill="currentColor" font-family="monospace" font-size="15" text-anchor="middle">
+                                <text x="135" y="35">I0.0</text><text x="305" y="35">Q0.0</text>
+                                <text x="135" y="135">PUSH BUTTON</text><text x="305" y="135">LAMPU</text>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="vis-plc-controls">
+                        <div><button type="button" id="plc-button" aria-pressed="false"
+                                aria-describedby="plc-help">TEKAN &amp; TAHAN</button><small id="plc-input">I0.0 ·
+                                OFF</small></div>
+                        <div>
+                            <div class="vis-bulb" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"
+                                    stroke="currentColor" stroke-width="3">
+                                    <path
+                                        d="M23 43C23 36 15 34 15 23a17 17 0 0 1 34 0c0 11-8 13-8 20Z M23 49h18 M26 55h12" />
+                                </svg></div><small id="plc-output">Q0.0 · OFF</small>
+                        </div>
+                    </div>
+                    <p id="plc-status" role="status">Lampu OFF — butang belum ditekan.</p>
+                    <p id="plc-help" class="micro">Tahan dengan jari atau tetikus. Pada papan kekunci, tahan Space atau
+                        Enter. Lepaskan untuk padam.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FASILITI: tukar src gambar di bawah. Jika gambar belum ada, ruang berlabel dipaparkan. -->
+        <section class="section" id="fasiliti">
             <div class="container">
                 <div class="section-heading">
                     <div>
-                        <div class="eyebrow">
-                            01 / KENALI PROGRAM
-                        </div>
-                        <h2>
-                            Suka tahu bagaimana
-                            <br />
-                            sesuatu
-                            <em>
-                                berfungsi?
-                            </em>
-                        </h2>
+                        <div class="eyebrow">03 / FASILITI KOLEJ</div>
+                        <h2>Kenali tempat<br><em>kamu belajar.</em></h2>
                     </div>
-                    <p>
-                        Mekatronik menggabungkan elektrik, elektronik, mekanikal dan pengaturcaraan untuk mengendalikan
-                        mesin serta sistem automatik.
-                    </p>
+                    <p>Nak tengok sendiri suasana kolej? Hubungi Sir Zul untuk tanya tentang ruang latihan, peralatan
+                        dan lawatan bersama keluarga.</p>
                 </div>
-                <div class="learning-grid">
-                    <article class="learning-feature">
-                        <!-- UBAH GAMBAR: gantikan nilai src dengan URL gambar anda. Internet diperlukan untuk foto ini. -->
-                        <img alt="Ilustrasi kerja reka bentuk dan perancangan teknikal" height="667" loading="lazy"
-                            src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1000&amp;q=85"
-                            width="1000" />
-                        <div>
-                            <span class="tag">
-                                SATU BIDANG. PELBAGAI KEMAHIRAN.
-                            </span>
-                            <h3>
-                                Fahami. Pasang.
-                                <br />
-                                Uji. Selesaikan.
-                            </h3>
-                            <p>
-                                Daripada mengenali komponen kepada memahami cara satu sistem bekerja bersama.
-                            </p>
+                <div class="vis-facilities">
+                    <article class="vis-facility">
+                        <!-- GAMBAR: simpan foto sendiri sebagai images/fasiliti-amali.jpg -->
+                        <div class="vis-photo">
+                            <div class="vis-photo-placeholder"><span aria-hidden="true">＋</span><span>Ruang latihan
+                                    amali</span><small>Foto akan dikemas kini</small></div><img
+                                src="images/fasiliti-amali.jpg" alt="Ruang latihan amali Kolej VIS" loading="lazy"
+                                onerror="this.hidden=true">
+                        </div>
+                        <div class="vis-facility-copy">
+                            <h3>Ruang latihan amali</h3>
+                            <p>Lihat ruang untuk latihan pemasangan, pengujian dan kerja amali.</p>
                         </div>
                     </article>
-                    <div class="learning-topics">
-                        <article>
-                            <span class="topic-number">
-                                01
-                            </span>
-                            <div>
-                                <h3>
-                                    Elektrik &amp; elektronik
-                                </h3>
-                                <p>
-                                    Kenali litar, sambungan, sensor dan komponen kawalan.
-                                </p>
-                            </div>
-                        </article>
-                        <article>
-                            <span class="topic-number">
-                                02
-                            </span>
-                            <div>
-                                <h3>
-                                    Mekanikal &amp; penyelenggaraan
-                                </h3>
-                                <p>
-                                    Fahami pergerakan mesin, pemasangan dan asas mengesan masalah.
-                                </p>
-                            </div>
-                        </article>
-                        <article>
-                            <span class="topic-number">
-                                03
-                            </span>
-                            <div>
-                                <h3>
-                                    Komputer &amp; pengaturcaraan
-                                </h3>
-                                <p>
-                                    Terokai logik arahan yang membantu sistem bertindak.
-                                </p>
-                            </div>
-                        </article>
-                        <article>
-                            <span class="topic-number">
-                                04
-                            </span>
-                            <div>
-                                <h3>
-                                    Reka bentuk &amp; automasi
-                                </h3>
-                                <p>
-                                    Kenali CAD, pneumatik, hidraulik, robotik dan IoT.
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                <p class="micro asset-note">
-                    Foto ialah ilustrasi, bukan foto pelajar atau fasiliti Kolej VIS. Aktiviti dan peralatan sebenar
-                    mengikut modul kolej.
-                </p>
-                <div class="fit-panel">
-                    <div>
-                        <span class="eyebrow">
-                            MULA DENGAN MINAT ANDA
-                        </span>
-                        <h3>
-                            “Saya suka…”
-                        </h3>
-                    </div>
-                    <div class="fit-main">
-                        <div aria-label="Pilih minat" class="interest-buttons">
-                            <button aria-pressed="true" data-interest="repair" type="button">
-                                Membaiki barang
-                            </button>
-                            <button aria-pressed="false" data-interest="code" type="button">
-                                Komputer &amp; kod
-                            </button>
-                            <button aria-pressed="false" data-interest="design" type="button">
-                                Reka bentuk
-                            </button>
-                            <button aria-pressed="false" data-interest="robot" type="button">
-                                Mesin &amp; robot
-                            </button>
+                    <article class="vis-facility">
+                        <!-- GAMBAR: simpan foto sendiri sebagai images/fasiliti-peralatan.jpg -->
+                        <div class="vis-photo">
+                            <div class="vis-photo-placeholder"><span aria-hidden="true">＋</span><span>Peralatan
+                                    latihan</span><small>Foto akan dikemas kini</small></div><img
+                                src="images/fasiliti-peralatan.jpg" alt="Peralatan latihan Kolej VIS" loading="lazy"
+                                onerror="this.hidden=true">
                         </div>
-                        <p aria-live="polite" id="interest-result">
-                            Minat mencari punca kerosakan? Terokai kemahiran pengujian komponen dan penyelenggaraan
-                            sistem.
-                        </p>
-                    </div>
+                        <div class="vis-facility-copy">
+                            <h3>Peralatan latihan</h3>
+                            <p>Kenali peralatan yang digunakan dalam pembelajaran mekatronik.</p>
+                        </div>
+                    </article>
+                    <article class="vis-facility">
+                        <!-- GAMBAR: simpan foto sendiri sebagai images/fasiliti-kelas.jpg -->
+                        <div class="vis-photo">
+                            <div class="vis-photo-placeholder"><span aria-hidden="true">＋</span><span>Ruang
+                                    pembelajaran</span><small>Foto akan dikemas kini</small></div><img
+                                src="images/fasiliti-kelas.jpg" alt="Ruang pembelajaran Kolej VIS" loading="lazy"
+                                onerror="this.hidden=true">
+                        </div>
+                        <div class="vis-facility-copy">
+                            <h3>Ruang pembelajaran</h3>
+                            <p>Lihat suasana kelas untuk belajar teori dan berbincang bersama.</p>
+                        </div>
+                    </article>
+                    <article class="vis-facility">
+                        <!-- GAMBAR: simpan foto sendiri sebagai images/fasiliti-asrama.jpg -->
+                        <div class="vis-photo">
+                            <div class="vis-photo-placeholder"><span aria-hidden="true">＋</span><span>Kemudahan
+                                    asrama</span><small>Foto akan dikemas kini</small></div><img
+                                src="images/fasiliti-asrama.jpg" alt="Kemudahan asrama Kolej VIS" loading="lazy"
+                                onerror="this.hidden=true">
+                        </div>
+                        <div class="vis-facility-copy">
+                            <h3>Kemudahan asrama</h3>
+                            <p>Tanya tentang keadaan bilik, kemudahan, kos dan kekosongan semasa.</p>
+                        </div>
+                    </article>
                 </div>
+                <p class="micro asset-note">Gambar akan dikemas kini. Kemudahan sebenar, akses dan kekosongan asrama
+                    tertakluk kepada pengesahan kolej.</p>
+                <a class="text-link"
+                    href="https://wa.me/60199254842?text=Salam%20Sir%20Zul%2C%20boleh%20saya%20tanya%20tentang%20lawatan%20dan%20fasiliti%20kolej%3F">Tanya
+                    tentang lawatan kolej ↗</a>
             </div>
         </section>
-        <!--
-06. TEKNOLOGI MASA DEPAN DAN SIMULASI CONVEYOR.
--->
-        <section class="future section">
-            <div class="container future-grid">
-                <div>
-                    <div class="eyebrow">
-                        BUKAN SEKADAR TEKNOLOGI HARI INI
-                    </div>
-                    <h2>
-                        Mesin semakin pintar.
-                        <br />
-                        <em>
-                            Kemahiran anda
-                            <br />
-                            tetap diperlukan.
-                        </em>
-                    </h2>
-                    <p>
-                        Di sebalik automasi, ada orang yang memasang, menguji dan menyelenggara sistem. Asas mekatronik
-                        menghubungkan anda dengan dunia robotik, IoT dan kilang pintar.
-                    </p>
-                    <div class="future-tags">
-                        <span>
-                            Robotik
-                        </span>
-                        <span>
-                            Internet of Things
-                        </span>
-                        <span>
-                            Automasi industri
-                        </span>
-                    </div>
-                </div>
-                <div class="demo" id="demo">
-                    <div class="demo-top">
-                        <span>
-                            CONTOH / CONVEYOR BERSENSOR
-                        </span>
-                        <span class="live">
-                            <i>
-                            </i>
-                            DEMO
-                        </span>
-                    </div>
-                    <div aria-hidden="true" class="demo-scene">
-                        <div class="sensor">
-                            <span>
-                                SENSOR
-                            </span>
-                            <i>
-                            </i>
-                        </div>
-                        <div class="parcel">
-                        </div>
-                        <div class="conveyor">
-                        </div>
-                    </div>
-                    <div class="demo-steps">
-                        <div>
-                            <b>
-                                01
-                            </b>
-                            <span>
-                                Sensor
-                                <br />
-                                <strong>
-                                    Mengesan
-                                </strong>
-                            </span>
-                        </div>
-                        <div>
-                            <b>
-                                02
-                            </b>
-                            <span>
-                                Program
-                                <br />
-                                <strong>
-                                    Memproses
-                                </strong>
-                            </span>
-                        </div>
-                        <div>
-                            <b>
-                                03
-                            </b>
-                            <span>
-                                Motor
-                                <br />
-                                <strong>
-                                    Menggerakkan
-                                </strong>
-                            </span>
-                        </div>
-                    </div>
-                    <button class="button demo-button" id="run-demo" type="button">
-                        Lihat cara ia bekerja
-                        <span aria-hidden="true">
-                            ▶
-                        </span>
-                    </button>
-                    <p aria-live="polite" class="micro" id="demo-status">
-                        Tekan untuk mencuba simulasi ringkas automasi.
-                    </p>
-                </div>
-            </div>
-        </section>
-        <!--
-07. PELUANG KERJAYA — data setiap pilihan ada dalam BAHAGIAN D.
--->
+
+        <!-- PELUANG KERJAYA: pilih sektor untuk lihat contoh tugas. -->
         <section class="section" id="kerjaya">
             <div class="container">
                 <div class="section-heading">
                     <div>
                         <div class="eyebrow">
-                            02 / BAYANGKAN LANGKAH SETERUSNYA
+                            04 / SELEPAS BELAJAR, KE MANA?
                         </div>
                         <h2>
                             Kemahiran yang membuka
@@ -3265,9 +4115,66 @@ TIP MUDAH
                         </h2>
                     </div>
                     <p>
-                        Kenali contoh peranan teknikal yang menggunakan asas mekatronik. Pilih kerjaya untuk lihat tugas
-                        dan kemahiran berkaitan.
+                        Bukan di kilang sahaja. Asas mekatronik juga digunakan dalam pertanian pintar, penternakan dan
+                        sistem air. Pilih bidang untuk lihat contoh kerja yang berkaitan.
                     </p>
+                </div>
+                <!-- SEKTOR KERJAYA: peluang bergantung pada kemahiran dan syarat majikan. -->
+                <div class="vis-pathways">
+                    <div class="vis-subheading">
+                        <span class="eyebrow">CAREER PATHWAYS</span>
+                        <h3>Pelbagai industri, banyak ruang untuk berkembang.</h3>
+                        <p>Kelayakan mekatronik boleh menjadi asas untuk meneroka peluang teknikal dalam sektor berikut.
+                        </p>
+                    </div>
+                    <div class="vis-pathway-grid">
+                        <article class="vis-pathway">
+                            <span class="vis-pathway-label">01 / Automation Industry</span>
+                            <h4>Industri automasi</h4>
+                            <p>Pemasangan, pengujian dan sokongan sistem kawalan mesin.</p>
+                        </article>
+                        <article class="vis-pathway">
+                            <span class="vis-pathway-label">02 / Manufacturing Plants</span>
+                            <h4>Kilang pembuatan</h4>
+                            <p>Sokongan teknikal untuk mesin dan kelancaran proses pengeluaran.</p>
+                        </article>
+                        <article class="vis-pathway">
+                            <span class="vis-pathway-label">03 / Electrical &amp; Electronics Industry</span>
+                            <h4>Industri elektrik &amp; elektronik</h4>
+                            <p>Pemasangan, pengujian dan pengesanan masalah pada peralatan.</p>
+                        </article>
+                        <article class="vis-pathway">
+                            <span class="vis-pathway-label">04 / Robotics</span>
+                            <h4>Bidang robotik</h4>
+                            <p>Sokongan pemasangan, operasi dan penyelenggaraan sistem robot.</p>
+                        </article>
+                        <article class="vis-pathway">
+                            <span class="vis-pathway-label">05 / Automotive Industry</span>
+                            <h4>Industri automotif</h4>
+                            <p>Sokongan teknikal untuk mesin dan sistem automasi di kilang automotif.</p>
+                        </article>
+                        <article class="vis-pathway">
+                            <span class="vis-pathway-label">06 / Maintenance &amp; Technical Services</span>
+                            <h4>Penyelenggaraan &amp; servis teknikal</h4>
+                            <p>Pemeriksaan berkala, pengesanan kerosakan dan servis peralatan.</p>
+                        </article>
+                        <article class="vis-pathway">
+                            <span class="vis-pathway-label">07 / Machine Operation &amp; Servicing</span>
+                            <h4>Operasi &amp; servis mesin</h4>
+                            <p>Pengendalian mesin, pemeriksaan asas dan kerja servis.</p>
+                        </article>
+                        <article class="vis-pathway">
+                            <span class="vis-pathway-label">08 / Industrial Automation Support</span>
+                            <h4>Sokongan automasi industri</h4>
+                            <p>Membantu pengujian dan penyelenggaraan PLC, HMI, sensor dan sistem kawalan.</p>
+                        </article>
+                    </div>
+                    <p class="micro asset-note">Contoh sektor dan laluan kerjaya, bukan jaminan pekerjaan. Syarat
+                        majikan berbeza; sesetengah tugas memerlukan latihan atau kelayakan tambahan.</p>
+                </div>
+                <div class="vis-subheading">
+                    <h3>Nak tahu contoh tugas? Pilih di bawah.</h3>
+                    <p>Terokai juga aplikasi dalam pertanian pintar, penternakan dan sistem air.</p>
                 </div>
                 <div class="career-layout">
                     <div aria-label="Terokai contoh kerjaya" class="career-options">
@@ -3319,6 +4226,12 @@ TIP MUDAH
                                 </svg>
                             </b>
                         </button>
+                        <button aria-pressed="false" data-career="agriculture" type="button"><span>05</span>Pertanian
+                            pintar<b aria-hidden="true">↗</b></button>
+                        <button aria-pressed="false" data-career="livestock" type="button"><span>06</span>Penternakan
+                            automatik<b aria-hidden="true">↗</b></button>
+                        <button aria-pressed="false" data-career="water" type="button"><span>07</span>Sistem pam &
+                            pengairan<b aria-hidden="true">↗</b></button>
                     </div>
                     <article aria-live="polite" class="career-detail">
                         <div class="eyebrow" id="career-sector">
@@ -3364,7 +4277,7 @@ TIP MUDAH
                 <div class="section-heading">
                     <div>
                         <div class="eyebrow">
-                            03 / RANCANG PEMBELAJARAN ANDA
+                            05 / RANCANG PEMBELAJARAN
                         </div>
                         <h2>
                             Fokus belajar.
@@ -3375,8 +4288,8 @@ TIP MUDAH
                         </h2>
                     </div>
                     <p>
-                        Ketahui pilihan yang dinyatakan dalam pengambilan ini. Sir Zul boleh menerangkan syarat sebelum
-                        anda membuat keputusan.
+                        Nak tahu tentang yuran dan bantuan? Tanya Sir Zul tentang kelayakan, jumlah pembiayaan dan
+                        bayaran balik sebelum membuat keputusan.
                     </p>
                 </div>
                 <div class="funding-grid">
@@ -3500,7 +4413,7 @@ TIP MUDAH
             <div class="container eligibility-grid">
                 <div>
                     <div class="eyebrow">
-                        04 / SIAPA BOLEH MEMOHON?
+                        06 / SIAPA BOLEH MEMOHON?
                     </div>
                     <h2>
                         Belum ada SPM?
@@ -3512,8 +4425,8 @@ TIP MUDAH
                         </em>
                     </h2>
                     <p>
-                        Tiada syarat akademik dinyatakan dalam pengambilan ini. Yang penting, anda berminat untuk
-                        membina kemahiran teknikal.
+                        Untuk pengambilan SKM Tahap 3 ini, tiada syarat sijil akademik dinyatakan. Yang penting, ada
+                        minat dan sedia belajar. Semak kelayakan kamu dengan pihak kolej.
                     </p>
                     <a class="button primary" href="#mohon">
                         Semak kelayakan saya
@@ -3614,8 +4527,8 @@ TIP MUDAH
                             </span>
                         </summary>
                         <p>
-                            Pengalaman teknikal tidak dinyatakan sebagai syarat pengambilan. Maklumkan latar belakang
-                            anda kepada Sir Zul untuk penerangan persediaan belajar.
+                            Belum pernah belajar teknikal? Boleh tanya dahulu, bah. Beritahu Sir Zul latar belakang kamu
+                            supaya beliau boleh terangkan persediaan dan syarat program.
                         </p>
                     </details>
                     <details>
@@ -3651,9 +4564,9 @@ TIP MUDAH
                             </span>
                         </summary>
                         <p>
-                            Bahan pengambilan menyatakan peluang pekerjaan disediakan selepas tamat. Tanya tentang
-                            bentuk bantuan penempatan dan prosesnya. Tawaran kerja tetap bergantung pada kekosongan
-                            serta pemilihan majikan.
+                            Tanya Sir Zul tentang bantuan penempatan dan persediaan mencari kerja. Kemahiran ini boleh
+                            digunakan dalam industri, pertanian pintar dan penternakan automatik. Tawaran tetap
+                            bergantung pada kemahiran, kekosongan dan syarat majikan.
                         </p>
                     </details>
                     <details>
@@ -3677,7 +4590,7 @@ TIP MUDAH
                         </summary>
                         <p>
                             Mulakan dengan mesej WhatsApp kepada Sir Zul. Beliau boleh membantu menyemak kelayakan,
-                            menerangkan dokumen dan mengesahkan pautan pendaftaran untuk pengambilan November 2026.
+                            menerangkan dokumen dan mengesahkan pautan pendaftaran untuk pengambilan Januari 2027.
                         </p>
                     </details>
                 </div>
@@ -3690,7 +4603,7 @@ TIP MUDAH
             <div class="container apply-grid">
                 <div class="apply-copy">
                     <div class="eyebrow">
-                        PENGAMBILAN NOVEMBER 2026
+                        PENGAMBILAN JANUARI 2027
                     </div>
                     <h2>
                         Langkah pertama
@@ -3701,8 +4614,8 @@ TIP MUDAH
                         </em>
                     </h2>
                     <p>
-                        Beritahu kami apa yang anda ingin tahu. Mulakan perbualan dengan Sir Zul untuk memahami program
-                        dan menyemak kelayakan.
+                        Ada yang kamu mahu tahu? Tanya saja Sir Zul tentang program, kos atau kelayakan. Boleh bincang
+                        dulu bersama ibu bapa.
                     </p>
                     <ol class="steps">
                         <li>
@@ -3767,10 +4680,10 @@ TIP MUDAH
                         MULAKAN DI SINI
                     </span>
                     <h3>
-                        Jom, semak peluang anda.
+                        Jom, tanya dulu.
                     </h3>
                     <p>
-                        Tiada komitmen pendaftaran pada langkah ini.
+                        Isi ringkas saja untuk sediakan mesej WhatsApp.
                     </p>
                     <form id="enquiry">
                         <fieldset>
@@ -3838,12 +4751,12 @@ TIP MUDAH
                                 Sudah bersedia untuk mendaftar?
                             </summary>
                             <p>
-                                Pautan asal menggunakan nama “okt-2026”. Sahkan dengan Sir Zul bahawa borang ini
-                                menerima permohonan November.
+                                Hubungi Sir Zul untuk mendapatkan pautan pendaftaran pengambilan semasa.
                             </p>
-                            <a class="text-link" href="https://vis-tuaran-intake-okt-2026.netlify.app/" rel="noopener"
-                                target="_blank">
-                                Buka borang pendaftaran asal
+                            <a class="text-link"
+                                href="https://wa.me/60199254842?text=Salam%20Sir%20Zul%2C%20boleh%20kongsikan%20pautan%20pendaftaran%20Januari%202027%3F"
+                                rel="noopener" target="_blank">
+                                Dapatkan pautan pendaftaran
                                 <span aria-hidden="true">
                                     <svg aria-hidden="true" class="arrow-icon" viewbox="0 0 24 24">
                                         <path d="M6 18 18 6M6 6h12v12">
@@ -3863,19 +4776,9 @@ TIP MUDAH
     <footer>
         <div class="container footer-top">
             <a class="logo" href="#utama">
-                <b>
-                    VIS
-                    <span>
-                        ●
-                    </span>
-                </b>
-                <span>
-                    KOLEJ VIS
-                    <br />
-                    <strong>
-                        MECHATRONIC
-                    </strong>
-                </span>
+                <img src="images/logovis.jpg" alt="Logo VIS Mechatronic" style="width: 100%;
+                        max-width: 320px;
+                        height: auto;">
             </a>
             <p>
                 Kemahiran bermula di sini.
@@ -3899,13 +4802,10 @@ TIP MUDAH
         </div>
         <div class="container footer-bottom">
             <span>
-                © 2026 Kolej VIS Mechatronic
+                © Kolej VIS Mechatronic (Tuaran)
             </span>
             <span>
                 Designed &amp; Developed by zhlmi.ijt
-            </span>
-            <span>
-                Foto ilustrasi: Unsplash
             </span>
         </div>
     </footer>
@@ -3915,10 +4815,13 @@ TIP MUDAH
     <div class="mobile-action">
         <div>
             <strong>
-                Pengambilan November
+                Pengambilan Januari 2027
             </strong>
             <span>
                 SKM Tahap 3 · Tuaran
+            </span>
+            <span>
+                Jangan Lepaskan Peluang!
             </span>
         </div>
         <a class="button primary" href="#mohon">
@@ -3948,7 +4851,7 @@ TIP MUDAH
         // UBAH DI SINI: nombor antarabangsa tanpa tanda +, ruang atau sengkang.
         // Jika menukar nombor, cari juga nombor lama dalam pautan HTML di atas.
         const nomborWhatsApp = '60199254842';
-        const pengambilan = 'November 2026';
+        const pengambilan = 'Januari 2027';
         const namaKolej = 'Kolej VIS Mechatronic, Tuaran';
         // Jika bulan/tahun berubah, kemas kini teks pengambilan dalam HTML juga.
 
@@ -4017,6 +4920,24 @@ TIP MUDAH
         // D4. PILIHAN KERJAYA
         // UBAH DI SINI: data untuk setiap kad kerjaya.
         const maklumatKerjaya = {
+            agriculture: {
+                sector: 'PERTANIAN PINTAR / SMART FARMING',
+                title: 'Bantu kebun bekerja dengan lebih teratur.',
+                description: 'Contoh kerja teknikal: memasang sensor kelembapan tanah, menguji pengawal siraman dan menyelenggara pam untuk sistem fertigasi atau rumah hijau.',
+                skills: 'Sensor · Pengawal automatik · Pam · Pemantauan data'
+            },
+            livestock: {
+                sector: 'PENTERNAKAN / AUTOMASI LADANG',
+                title: 'Teknologi juga ada di reban dan ladang.',
+                description: 'Kemahiran teknikal boleh digunakan untuk membantu menyelenggara sistem pemberi makanan, bekalan air dan kawalan suhu atau pengudaraan reban.',
+                skills: 'Motor · Sensor suhu · Sistem kawalan · Penyelenggaraan'
+            },
+            water: {
+                sector: 'SISTEM AIR / SERVIS TEKNIKAL',
+                title: 'Pastikan pam dan aliran air terkawal.',
+                description: 'Terokai kerja sokongan teknikal untuk pam, sensor paras tangki dan pengairan automatik. Sistem seperti ini digunakan di kebun, ladang dan bangunan.',
+                skills: 'Pam · Sensor paras · Panel kawalan · Pengesanan masalah'
+            },
             maintenance: {
                 sector: 'PENYELENGGARAAN / SERVIS',
                 title: 'Pastikan mesin terus berfungsi.',
@@ -4062,33 +4983,72 @@ TIP MUDAH
             });
         });
 
-        // D5. SIMULASI CONVEYOR
-        // class 'running' menggerakkan kotak menggunakan CSS.
-        // setTimeout menunggu masa tertentu. 1000 milisaat = 1 saat.
-        const kotakDemo = document.getElementById('demo');
-        const butangDemo = document.getElementById('run-demo');
-        const statusDemo = document.getElementById('demo-status');
+        // D5. PLC ASAS — satu input, satu output. Tiada latch.
+        const panelPLC = document.getElementById('plc-demo');
+        const butangPLC = document.getElementById('plc-button');
+        let pointerAktif = false;
+        const kekunciAktif = new Set();
 
-        function jalankanDemo() {
-            butangDemo.disabled = true;
-            kotakDemo.classList.remove('running');
-            statusDemo.textContent = 'Motor menggerakkan objek ke arah sensor.';
-
-            window.setTimeout(function () {
-                kotakDemo.classList.add('running');
-            }, 100);
-
-            window.setTimeout(function () {
-                statusDemo.textContent = 'Sensor mengesan objek. Program memproses isyarat dan motor meneruskan pergerakan.';
-            }, 1150);
-
-            window.setTimeout(function () {
-                butangDemo.disabled = false;
-                butangDemo.textContent = 'Ulang simulasi';
-            }, 1850);
+        function kemasKiniPLC() {
+            const hidup = pointerAktif || kekunciAktif.size > 0;
+            const status = hidup ? 'ON' : 'OFF';
+            panelPLC.classList.toggle('is-on', hidup);
+            butangPLC.setAttribute('aria-pressed', String(hidup));
+            document.getElementById('plc-input').textContent = 'I0.0 · ' + status;
+            document.getElementById('plc-output').textContent = 'Q0.0 · ' + status;
+            document.getElementById('plc-status').textContent = hidup
+                ? 'Lampu ON — input aktif, program menghidupkan output.'
+                : 'Lampu OFF — input tidak aktif, output dipadamkan.';
         }
+        function padamPLC() {
+            pointerAktif = false;
+            kekunciAktif.clear();
+            kemasKiniPLC();
+        }
+        butangPLC.addEventListener('pointerdown', function (event) {
+            if (event.button !== 0) return;
+            pointerAktif = true;
+            butangPLC.setPointerCapture(event.pointerId);
+            kemasKiniPLC();
+        });
+        ['pointerup', 'pointercancel', 'lostpointercapture'].forEach(function (jenis) {
+            butangPLC.addEventListener(jenis, function () {
+                pointerAktif = false;
+                kemasKiniPLC();
+            });
+        });
+        butangPLC.addEventListener('contextmenu', function (event) { event.preventDefault(); });
+        butangPLC.addEventListener('keydown', function (event) {
+            if (event.key === ' ' || event.key === 'Enter') {
+                event.preventDefault();
+                kekunciAktif.add(event.key);
+                kemasKiniPLC();
+            }
+        });
+        butangPLC.addEventListener('keyup', function (event) {
+            if (event.key === ' ' || event.key === 'Enter') {
+                event.preventDefault();
+                kekunciAktif.delete(event.key);
+                kemasKiniPLC();
+            }
+        });
+        butangPLC.addEventListener('blur', padamPLC);
+        window.addEventListener('blur', padamPLC);
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) padamPLC();
+        });
 
-        butangDemo.addEventListener('click', jalankanDemo);
+
+        // Buka satu bidang sahaja pada satu masa supaya senarai kekal ringkas.
+        const semuaBidang = document.querySelectorAll('.vis-subject-toggle');
+        semuaBidang.forEach(function (bidang) {
+            bidang.addEventListener('toggle', function () {
+                if (!bidang.open) return;
+                semuaBidang.forEach(function (lain) {
+                    if (lain !== bidang) lain.open = false;
+                });
+            });
+        });
 
         // D6. BORANG WHATSAPP
         // Borang ini tidak menyimpan data atau menghantar mesej secara automatik.
@@ -4122,6 +5082,16 @@ TIP MUDAH
         }
 
         borang.addEventListener('submit', bukaWhatsApp);
+
+        // Pause video apabila penerangan mekatronik ditutup.
+        const infoMekatronik = document.getElementById('mekatronik-info');
+        infoMekatronik.addEventListener('toggle', function () {
+            if (!infoMekatronik.open) {
+                infoMekatronik.querySelectorAll('video').forEach(function (video) {
+                    video.pause();
+                });
+            }
+        });
     </script>
 </body>
 
